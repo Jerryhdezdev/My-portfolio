@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export function Navbar() {
@@ -8,13 +9,35 @@ export function Navbar() {
   const modalRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
+  // Theme state
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    document.documentElement.classList.add("theme-ready");
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  function toggleTheme() {
+    document.documentElement.classList.add("theme-transition");
+
+    setTheme(theme === "dark" ? "light" : "dark");
+
+    setTimeout(() => {
+      document.documentElement.classList.remove("theme-transition");
+    }, 350);
+  }
+
   const MENU_ITEMS = [
-    { id: "home", path: "#home", label: "navbar.home" },
-    { id: "about", path: "#about", label: "navbar.about" },
-    { id: "experience", path: "#experience", label: "navbar.experience" },
-    { id: "technologies", path: "#technologies", label: "navbar.technologies" },
-    { id: "project", path: "#project", label: "navbar.project" },
-    { id: "contact", path: "#contact", label: "navbar.contact" },
+    { id: "home", path: "/", label: "navbar.home" },
+    { id: "about", path: "/about", label: "navbar.about" },
+    { id: "experience", path: "/experience", label: "navbar.experience" },
+    { id: "technologies", path: "/technologies", label: "navbar.technologies" },
+    { id: "project", path: "/project", label: "navbar.project" },
+    { id: "contact", path: "/contact", label: "navbar.contact" },
   ] as const;
 
   // Language options for your switcher and names for toast messages or UI labels
@@ -60,9 +83,15 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <header className="fixed text-(--color-text-navbar) top-0 left-0 w-full z-50 bg-(--color-bg-navbarAndFooter) shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="#home" aria-label={t("aria.logo")}>
+        <a
+          href="/"
+          aria-label={t("aria.logo")}
+          className="inline-block focus:outline-none
+             focus-visible:ring-2 focus-visible:ring-[#d2ad4b]
+             focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-navbarAndFooter)"
+        >
           <img
             src="/logo/logo.webp"
             alt="Jerry.dev logo"
@@ -73,14 +102,26 @@ export function Navbar() {
         {/* Desktop menu */}
         <nav className="hidden md:flex gap-6" aria-label={t("aria.mainNav")}>
           {MENU_ITEMS.map(({ id, path, label }) => (
-            <a
+            <NavLink
               key={id}
-              href={path}
+              to={path}
+              end={path === "/"}
               aria-label={t(`navbar.alt.${id}`)}
-              className="hover:underline"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative text-sm lg:text-2xl transition focus:outline-none
+         hover:after:w-full focus-visible:after:w-full
+         after:absolute after:-bottom-1 after:left-0 after:h-1
+         after:bg-(--color-hover-text-navbarAndFooter) after:w-0
+         after:transition-all after:duration-300
+         ${
+           isActive
+             ? "after:w-full text-(--color-text-navbar)"
+             : "text-(--color-text-navbar)"
+         }`
+              }
             >
               {t(label)}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -88,21 +129,23 @@ export function Navbar() {
         <button
           ref={toggleButtonRef}
           onClick={() => setIsOpen((prev) => !prev)}
-          className="md:hidden p-2 focus:outline-none relative w-6 h-6 z-60"
           aria-label="Toggle menu"
+          className="md:hidden p-2 focus:outline-none 
+             focus-visible:ring-2 focus-visible:ring-[#d2ad4b]
+             focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-navbarAndFooter)
+             relative w-6 h-6 z-60"
         >
           <span
-            className={`absolute left-0 top-1/2 w-full h-0.5 bg-black transition-transform duration-300 ease-in-out hover:scale-105
- ${isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
+            className={`absolute left-0 top-1/2 w-full h-0.5 bg-white transition-transform duration-300 ease-in-out hover:scale-105
+      ${isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
           />
           <span
-            className={`absolute left-0 top-1/2 w-full h-0.5 bg-black transition-opacity duration-300 ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
+            className={`absolute left-0 top-1/2 w-full h-0.5 bg-white transition-opacity duration-300
+      ${isOpen ? "opacity-0" : "opacity-100"}`}
           />
           <span
-            className={`absolute left-0 top-1/2 w-full h-0.5 bg-black transition-transform duration-300 ease-in-out hover:scale-105
- ${isOpen ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
+            className={`absolute left-0 top-1/2 w-full h-0.5 bg-white transition-transform duration-300 ease-in-out hover:scale-105
+      ${isOpen ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
           />
         </button>
 
@@ -126,15 +169,38 @@ export function Navbar() {
 
                 toast.success(activationMessages[code]);
               }}
-              className={`relative inline-block text-sm font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 after:transition-all after:duration-300 ${
+              className={`relative inline-block text-sm lg:text-2xl transition hover:after:w-full focus:outline-none focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[#d2ad4b] after:w-0 after:transition-all after:duration-300 ${
                 i18n.language === code
-                  ? "after:w-full text-blue-600"
-                  : "text-gray-600"
+                  ? "after:w-full text-(--color-text-navbar)"
+                  : "text-(--color-text-navbar)"
               }`}
             >
               {label}
             </button>
           ))}
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className={`flex flex-col items-center justify-center w-10 h-10 rounded-full transition-all duration-300
+              bg-black text-gray-300 
+              shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(0,0,0,0.7),0_4px_6px_rgba(0,0,0,0.8)]
+              active:shadow-[inset_4px_4px_6px_rgba(0,0,0,0.9),inset_-2px_-2px_4px_rgba(255,255,255,0.05)] 
+              `}
+          >
+            {/* Power symbol */}
+            <span className="text-lg font-bold">⏻</span>
+
+            {/* Status line */}
+            <span
+              className={`mt-0.5 h-0.5 w-4 rounded-sm transition-colors duration-300
+                ${
+                  theme === "dark"
+                    ? "bg-transparent"
+                    : "bg-green-500 shadow-[0_0_6px_#22c55e]"
+                }`}
+            />
+          </button>
         </div>
       </div>
 
@@ -150,19 +216,31 @@ export function Navbar() {
           {/* Drawer */}
           <div
             ref={modalRef}
-            className="w-2/3 max-w-sm bg-white h-full shadow-lg p-6 flex flex-col gap-6 text-lg relative"
+            className="w-2/3 max-w-sm bg-(--color-bg-navbarAndFooter) h-full shadow-lg p-6 flex flex-col gap-6 text-lg relative"
           >
-            {/* Menu items */}
+            {/* Menu mobile items */}
             {MENU_ITEMS.map(({ id, path, label }) => (
-              <a
+              <NavLink
                 key={id}
-                href={path}
-                onClick={() => setIsOpen(false)}
+                to={path}
+                end={path === "/"}
                 aria-label={t(`navbar.alt.${id}`)}
-                className="hover:underline"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }: { isActive: boolean }) =>
+                  `relative inline-block w-fit text-lg font-semibold transition
+       hover:after:w-full focus:outline-none focus-visible:after:w-full
+       after:absolute after:-bottom-1 after:left-0 after:h-1
+       after:bg-(--color-hover-text-navbarAndFooter) after:w-0
+       after:transition-all after:duration-300
+       ${
+         isActive
+           ? "after:w-full text-(--color-text-navbar)"
+           : "text-(--color-text-navbar)"
+       }`
+                }
               >
                 {t(label)}
-              </a>
+              </NavLink>
             ))}
 
             {/* Mobile language selector */}
@@ -184,15 +262,38 @@ export function Navbar() {
 
                     setIsOpen?.(false);
                   }}
-                  className={`relative inline-block font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 after:transition-all after:duration-300 ${
+                  className={`relative inline-block text-lg transition hover:after:w-full focus:outline-none focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[#d2ad4b] after:w-0 after:transition-all after:duration-300 ${
                     i18n.language === code
-                      ? "after:w-full text-blue-600"
-                      : "text-gray-600"
+                      ? "after:w-full text-(--color-text-navbar)"
+                      : "text-(--color-text-navbar)"
                   }`}
                 >
                   {label}
                 </button>
               ))}
+              {/* Mobile theme toggle */}
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                className={`flex flex-col items-center justify-center w-10 h-10 rounded-full transition-all duration-300
+              bg-black text-gray-300 
+              shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(0,0,0,0.7),0_4px_6px_rgba(0,0,0,0.8)]
+              active:shadow-[inset_4px_4px_6px_rgba(0,0,0,0.9),inset_-2px_-2px_4px_rgba(255,255,255,0.05)] 
+              `}
+              >
+                {/* Power symbol */}
+                <span className="text-lg font-bold">⏻</span>
+
+                {/* Status line */}
+                <span
+                  className={`mt-0.5 h-0.5 w-4 rounded-sm transition-colors duration-300
+                ${
+                  theme === "dark"
+                    ? "bg-transparent"
+                    : "bg-green-500 shadow-[0_0_6px_#22c55e]"
+                }`}
+                />
+              </button>
             </div>
           </div>
         </div>

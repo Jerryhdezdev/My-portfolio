@@ -1,19 +1,47 @@
 @import "tailwindcss";
 
+/* Smooth transition on theme change */
+html.theme-transition {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    fill 0.35s ease,
+    stroke 0.35s ease;
+}
+
+html:not(.theme-ready) * {
+  transition: none !important;
+}
+
+/* color-variable changes animate smoothly */
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    fill 0.35s ease,
+    stroke 0.35s ease;
+}
+
+
+/* Light Mode palette */
 :root {
-  /* Light Mode palette */
   --color-text-navbar: #ffffff;
   --color-text-primary: #2e2e2e;
   --color-text-secondary: #d48806;
 
-  --color-hover-text-navbarAndFooter: #d48806;
+  --color-hover-text-navbarAndFooter: #d2ad4b;
 
   --color-bg-navbarAndFooter: #336fa3;
   --color-bg-body: #f7f6f4;
 }
 
+
+/* Dark Mode palette */
 [data-theme="dark"] {
-  /* Dark Mode palette */
   --color-text-navbar: #fdfdfd;
   --color-text-primary: #e6e6e6;
   --color-text-secondary: #ffb84d;
@@ -24,6 +52,9 @@
   --color-bg-body: #121212;
 }
 
+
+/* Base Body Styles */
+
 body {
   margin: 0;
   background: var(--color-bg-body);
@@ -31,4 +62,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  /* Smooth transition for body background & text */
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
