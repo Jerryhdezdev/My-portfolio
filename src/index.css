@@ -54,102 +54,53 @@ body {
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-/* Footer ToolTip*/
-
-/* Parent wrapper that controls tooltip visibility */
-.footer-tooltip-parent {
+/* Tooltip Style*/
+.tooltip-parent {
   position: relative;
   display: inline-flex;
 }
 
-/* Tooltip box */
-.footer-tooltip {
+.tooltip {
   position: absolute;
-  top: 100%;  /* keep it below */
-  left: 50%;  /* center even on mobile */
-  transform: translate(-50%, 0.6rem);
-  
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(1rem); /* smooth slide-up */
+  max-width: calc(100vw - 16px); /* prevents cutting on edges */
+  opacity: 0;
+  pointer-events: none;
+
   background-color: var(--color-bg-navbarAndFooter);
   color: var(--color-text-navbar);
   border: 2px solid var(--color-hover-text-navbarAndFooter);
-
   font-size: 0.75rem;
-  line-height: 1rem;
   padding: 4px 8px;
   border-radius: 6px;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-
-  opacity: 0;
-  pointer-events: none; /* does not block hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 50;
-  transition: opacity 0.18s ease-in-out, transform 0.18s ease-in-out;
-  
-  max-width: 90vw; /* prevent long tooltip overflow */
   overflow: hidden;
   text-overflow: ellipsis;
+
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Arrow under tooltip (optional) */
-.footer-tooltip::after {
+.tooltip-visible {
+  opacity: 1;
+  transform: translateY(0); /* slides up */
+  pointer-events: auto;
+}
+
+.tooltip::after {
   content: "";
   position: absolute;
-  top: -4px; /* places arrow above */
-  left: 50%;/* left arrow default for mobile */
+  top: -4px;
+  left: 50%;
   width: 6px;
   height: 6px;
   transform: translateX(-50%) rotate(45deg);
-
   background-color: var(--color-bg-navbarAndFooter);
   border-left: 2px solid var(--color-hover-text-navbarAndFooter);
   border-top: 2px solid var(--color-hover-text-navbarAndFooter);
   border-radius: 1px;
-}
-
-/* Show tooltip on hover or keyboard focus */
-.footer-tooltip-parent:hover .footer-tooltip,
-.footer-tooltip-parent:focus-within .footer-tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* for desktop */
-@media (min-width: 768px) {
-  .footer-tooltip {
-    left: 50%;
-    transform: translate(-50%, 0.6rem);
-  }
-
-  .footer-tooltip-parent:hover .footer-tooltip,
-  .footer-tooltip-parent:focus-within .footer-tooltip {
-    transform: translateY(-0.25rem);
-  }
-
-  .footer-tooltip::after {
-    top: 100%;
-    border: none;
-    border-right: 2px solid var(--color-hover-text-navbarAndFooter);
-    border-bottom: 2px solid var(--color-hover-text-navbarAndFooter);
-  }
-}
-
-/* for mobile */
-@media (max-height: 380px), (hover: none) {
-  .footer-tooltip {
-    top: auto;
-    bottom: 100%;
-    transform: translateY(-0.5rem);
-  }
-
-  .footer-tooltip-parent:hover .footer-tooltip,
-  .footer-tooltip-parent:focus-within .footer-tooltip {
-    transform: translateY(-0.25rem);
-  }
-
-  .footer-tooltip::after {
-    top: 100%;
-    border: none;
-    border-right: 2px solid var(--color-hover-text-navbarAndFooter);
-    border-bottom: 2px solid var(--color-hover-text-navbarAndFooter);
-  }
 }

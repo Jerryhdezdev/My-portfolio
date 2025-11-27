@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Tooltip } from "./Tooltip";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -56,7 +57,7 @@ export function Navbar() {
     };
   }, [isOpen]);
 
-  // Handle outside click, touch, and Escape key
+  // Handle outside click, touch, tab key and Escape key
   useEffect(() => {
     const handleOutside = (event: MouseEvent | TouchEvent) => {
       if (!modalRef.current) return;
@@ -72,14 +73,26 @@ export function Navbar() {
       }
     };
 
+    const handleFocusIn = (event: FocusEvent) => {
+      if (!modalRef.current) return;
+      if (
+        !modalRef.current.contains(event.target as Node) &&
+        !toggleButtonRef.current?.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleOutside);
     document.addEventListener("touchstart", handleOutside);
     document.addEventListener("keydown", handleEsc);
+    document.addEventListener("focusin", handleFocusIn); // ✅ new listener
 
     return () => {
       document.removeEventListener("mousedown", handleOutside);
       document.removeEventListener("touchstart", handleOutside);
       document.removeEventListener("keydown", handleEsc);
+      document.removeEventListener("focusin", handleFocusIn); // cleanup
     };
   }, []);
 
@@ -87,19 +100,21 @@ export function Navbar() {
     <header className="fixed text-(--color-text-navbar) top-0 left-0 w-full z-50 bg-(--color-bg-navbarAndFooter) shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link
-          to="/"
-          aria-label={t("aria.logo")}
-          className="inline-block focus:outline-none
+        <Tooltip labelKey="navbar.tooltipLogo">
+          <Link
+            to="/"
+            aria-label={t("aria.logo")}
+            className="inline-block focus:outline-none
      focus-visible:ring-2 focus-visible:ring-[#d2ad4b]
      focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-navbarAndFooter)"
-        >
-          <img
-            src="/logo/logo.webp"
-            alt="Jerry.dev logo"
-            className="h-12 lg:h-15 w-auto transition-transform duration-300 hover:scale-105"
-          />
-        </Link>
+          >
+            <img
+              src="/logo/logo.webp"
+              alt="Jerry.dev logo"
+              className="h-12 lg:h-15 w-auto transition-transform duration-300 hover:scale-105"
+            />
+          </Link>
+        </Tooltip>
 
         {/* Desktop menu */}
         <nav className="hidden md:flex gap-6" aria-label={t("aria.mainNav")}>
@@ -128,28 +143,35 @@ export function Navbar() {
         </nav>
 
         {/* Mobile toggle */}
-        <button
-          ref={toggleButtonRef}
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-          className="md:hidden p-2 focus:outline-none 
-             focus-visible:ring-2 focus-visible:ring-[#d2ad4b]
-             focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-navbarAndFooter)
-             relative w-6 h-6 z-60"
-        >
-          <span
-            className={`absolute left-0 top-1/2 w-full h-0.5 bg-white transition-transform duration-300 ease-in-out hover:scale-105
+        <div className="relative flex flex-col items-center ">
+          <button
+            ref={toggleButtonRef}
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+            className="md:hidden p-2 focus:outline-none 
+     focus-visible:ring-2 focus-visible:ring-[#d2ad4b]
+     focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-navbarAndFooter)
+     relative w-12 h-6 z-60 transition-transform duration-300 hover:scale-105"
+          >
+            <span
+              className={`absolute left-0 top-1/2 w-12 h-0.5 bg-white transition-transform duration-300 ease-in-out hover:scale-105
       ${isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
-          />
-          <span
-            className={`absolute left-0 top-1/2 w-full h-0.5 bg-white transition-opacity duration-300
+            />
+            <span
+              className={`absolute left-0 top-1/2 w-12 h-0.5 bg-white transition-opacity duration-300
       ${isOpen ? "opacity-0" : "opacity-100"}`}
-          />
-          <span
-            className={`absolute left-0 top-1/2 w-full h-0.5 bg-white transition-transform duration-300 ease-in-out hover:scale-105
+            />
+            <span
+              className={`absolute left-0 top-1/2 w-12 h-0.5 bg-white transition-transform duration-300 ease-in-out hover:scale-105
       ${isOpen ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
-          />
-        </button>
+            />
+          </button>
+
+          {/* Dynamic label below button */}
+          <span className="md:hidden mt-1 text-sm  text-white select-none relative z-70">
+            {isOpen ? t("navbar.menuClose") : t("navbar.menuOpen")}
+          </span>
+        </div>
 
         {/* Desktop language selector */}
         <div

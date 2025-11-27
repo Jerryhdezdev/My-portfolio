@@ -83,7 +83,7 @@ export function Footer() {
                 <img
                   src="/src/assets/icons/email.webp"
                   alt="Email"
-                  className="h-24 w-24 md:h-26 md:w-26"
+                  className="h-26 w-26 md:h-32 md:w-32"
                 />
               </a>
             </Tooltip>

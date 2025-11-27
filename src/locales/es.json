@@ -10,6 +10,9 @@
     "technologies": "Tecnologías",
     "project": "Proyectos",
     "contact": "Contacto",
+    "tooltipLogo": "Volver a Home",
+    "menuOpen": "Menú",
+    "menuClose": "Cerrar menú",
     "alt": {
       "home": "Ir a la sección inicio",
       "about": "Conoce más sobre mi trayectoria en backend",
@@ -20,14 +23,14 @@
     }
   },
 
-"footer": {
-  "tooltipLogo": "Volver a Home",
-  "tooltipEmail": "Contáctame",
-  "tooltipGitHub": "Echa un vistazo a mi GitHub",
-  "tooltipLinkedIn": "Visita mi LinkedIn",
-  "language":"Tradúcelo a:",
-  "developer":"Diseñado y desarrollado por"
-},
+  "footer": {
+    "tooltipLogo": "Volver a Home",
+    "tooltipEmail": "Contáctame",
+    "tooltipGitHub": "Echa un vistazo a mi GitHub",
+    "tooltipLinkedIn": "Visita mi LinkedIn",
+    "language": "Tradúcelo a:",
+    "developer": "Diseñado y desarrollado por"
+  },
 
   "meta": {
     "title": "Jerry Hdez | Portfolio",

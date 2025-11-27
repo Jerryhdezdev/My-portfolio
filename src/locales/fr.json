@@ -10,6 +10,9 @@
     "technologies": "Technologies",
     "project": "Projets",
     "contact": "Contact",
+    "tooltipLogo": "Retour à l'accueil",
+    "menuOpen": "Menu",
+    "menuClose": "Fermer menu",
     "alt": {
       "home": "Aller à la section accueil",
       "about": "En savoir plus sur mon parcours backend",
@@ -21,14 +24,14 @@
   },
 
   "footer": {
-  "tooltipLogo": "Retour à l'accueil",
-  "tooltipEmail": "Écris-moi",
-  "tooltipGitHub": "Explore mon GitHub",
-  "tooltipLinkedIn": "Visiter mon LinkedIn",
-  "language":"Traduis-le en:",
-  "developer": "Conçu et développé par"
-},
-  
+    "tooltipLogo": "Retour à l'accueil",
+    "tooltipEmail": "Écris-moi",
+    "tooltipGitHub": "Explore mon GitHub",
+    "tooltipLinkedIn": "Visiter mon LinkedIn",
+    "language": "Traduis-le en:",
+    "developer": "Conçu et développé par"
+  },
+
   "meta": {
     "title": "Jerry Hdez | Portfolio",
     "description": "Découvrez l'expertise de Jerry en Java, Spring Boot, microservices et architecture backend évolutive."
