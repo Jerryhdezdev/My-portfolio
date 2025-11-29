@@ -42,6 +42,13 @@ html:not(.theme-ready) * {
   --color-bg-body: #121212;
 }
 
+.navbar-scroll.navbar-scrolled {
+  background: rgba(0, 0, 0, 0.45);  /* same black, just transparent */ 
+  -webkit-backdrop-filter: blur(12px);
+   backdrop-filter: blur(12px);   
+  transition: background 0.3s ease-in-out;
+}
+
 /* Base Body Styles */
 
 body {
