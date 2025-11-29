@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Tooltip } from "./Tooltip";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export function Navbar() {
@@ -9,7 +9,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
 
   // Theme state
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -35,25 +35,38 @@ export function Navbar() {
     }, 350);
   }
 
+  // Apply scroll style only when mobile menu is closed
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        headerRef.current?.classList.add("navbar-scrolled");
-      } else {
-        headerRef.current?.classList.remove("navbar-scrolled");
+      if (!isOpen) {
+        if (window.scrollY > 10) {
+          headerRef.current?.classList.add("navbar-scrolled");
+        } else {
+          headerRef.current?.classList.remove("navbar-scrolled");
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isOpen]);
+
+  // Force original solid navbar when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      headerRef.current?.classList.add("mobile-open");
+      headerRef.current?.classList.remove("navbar-scrolled"); // por si el scroll lo tenía activo
+    } else {
+      headerRef.current?.classList.remove("mobile-open");
+    }
+  }, [isOpen]);
 
   const MENU_ITEMS = [
     { id: "home", path: "#home", label: "navbar.home" },
     { id: "about", path: "#about", label: "navbar.about" },
     { id: "experience", path: "#experience", label: "navbar.experience" },
     { id: "technologies", path: "#technologies", label: "navbar.technologies" },
-    { id: "project", path: "#project", label: "navbar.project" },
+    { id: "projects", path: "#projects", label: "navbar.projects" },
     { id: "contact", path: "#contact", label: "navbar.contact" },
   ] as const;
 
@@ -83,6 +96,7 @@ export function Navbar() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             history.replaceState(null, "", `#${entry.target.id}`);
+            setActiveSection(entry.target.id);
 
             const menuLink = document.querySelector(
               `nav a[href="#${entry.target.id}"]`
@@ -175,12 +189,13 @@ export function Navbar() {
         <nav className="hidden md:flex gap-6" aria-label={t("aria.mainNav")}>
           {MENU_ITEMS.map(({ id, path, label }) => {
             // Detect if current scroll-section is the same as menu hash
-            const isActive = location.hash === path;
+            const isActive = activeSection === id;
 
             const handleClick = (e: React.MouseEvent) => {
               e.preventDefault(); // avoid navigation jump
               const section = document.getElementById(id);
               section?.scrollIntoView({ behavior: "smooth", block: "start" });
+              setActiveSection(id);
             };
 
             return (
@@ -311,12 +326,13 @@ export function Navbar() {
             {/* Menu mobile items */}
             {MENU_ITEMS.map(({ id, path, label }) => {
               // Active if hash matches the menu path
-              const isActive = location.hash === path;
+              const isActive = activeSection === id;
 
               const handleClick = (e: React.MouseEvent) => {
                 e.preventDefault();
                 const section = document.getElementById(id);
                 section?.scrollIntoView({ behavior: "smooth", block: "start" });
+                setActiveSection(id);
                 setIsOpen(false); // Close mobile drawer AFTER scrolling
               };
 

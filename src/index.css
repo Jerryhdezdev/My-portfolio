@@ -6,6 +6,10 @@ html.theme-transition {
     border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html:not(.theme-ready) * {
   transition: none !important;
 }
@@ -43,10 +47,18 @@ html:not(.theme-ready) * {
 }
 
 .navbar-scroll.navbar-scrolled {
-  background: rgba(0, 0, 0, 0.45);  /* same black, just transparent */ 
+  background: rgba(51, 111, 163, 0.45); /* same #336fa3 with 45% opacity */
   -webkit-backdrop-filter: blur(12px);
-   backdrop-filter: blur(12px);   
+  backdrop-filter: blur(12px);
   transition: background 0.3s ease-in-out;
+}
+
+/* When mobile menu is OPEN, force original SOLID style */
+.navbar-scroll.mobile-open {
+  background: var(--color-bg-navbarAndFooter) !important; /* original theme color */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transition: none !important;
 }
 
 /* Base Body Styles */

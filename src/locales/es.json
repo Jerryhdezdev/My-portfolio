@@ -8,7 +8,7 @@
     "about": "Sobre mí",
     "experience": "Experiencia",
     "technologies": "Tecnologías",
-    "project": "Proyectos",
+    "projects": "Proyectos",
     "contact": "Contacto",
     "tooltipLogo": "Volver a Home",
     "menuOpen": "Menú",
@@ -18,7 +18,7 @@
       "about": "Conoce más sobre mi trayectoria en backend",
       "experience": "Ver mi experiencia en desarrollo backend",
       "technologies": "Explora las tecnologías backend que uso",
-      "project": "Mira mis proyectos backend",
+      "projects": "Mira mis proyectos backend",
       "contact": "Contáctame"
     }
   },
