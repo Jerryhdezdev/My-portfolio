@@ -47,8 +47,11 @@
   "sections": {
     "home": {
       "introStart": "Hola, soy",
-      "heroTagline": "Backend por diseño, curioso en cada capa.",
-      "description": "Construyo sistemas backend escalables (principalmente en Java) y estoy expandiéndome intencionalmente hacia el frontend para crear mejores experiencias de usuario y productos más completos."
+      "heroTagline": "Software Developer especializado en Java, Spring Boot y APIs RESTful",
+      "description": "Construyo sistemas backend escalables (principalmente en Java) y estoy expandiéndome intencionalmente hacia el frontend para crear mejores experiencias de usuario y productos más completos.",
+      "cta":"Descargar CV",
+      "tooltipLinkedIn":"Visita mi LinkedIn",
+      "tooltipGitHub": "Echa un vistazo a mi GitHub"
     },
     "about": {
       "description": "Soy un desarrollador backend especializado en Java, Spring Boot, APIs RESTful y sistemas distribuidos."

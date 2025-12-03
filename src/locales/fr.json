@@ -45,8 +45,11 @@
   "sections": {
     "home": {
       "introStart": "Salut, je suis",
-"heroTagline": "Backend par conception, curieux à chaque couche.",
-"description": "Je construis des systèmes backend évolutifs (principalement en Java) et je me développe intentionnellement vers le frontend pour créer de meilleures expériences utilisateur et des produits numériques plus complets."
+      "heroTagline": "Développeur logiciel spécialisé en Java, Spring Boot et API RESTful",
+      "description": "Je construis des systèmes backend évolutifs (principalement en Java) et je me développe intentionnellement vers le frontend pour créer de meilleures expériences utilisateur et des produits numériques plus complets.",
+      "cta": "Télécharger CV",
+      "tooltipGitHub": "Explore mon GitHub",
+      "tooltipLinkedIn": "Visiter mon LinkedIn"
     },
     "about": {
       "heading": "À propos de moi",
