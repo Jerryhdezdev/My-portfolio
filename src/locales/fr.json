@@ -49,11 +49,17 @@
       "description": "Je construis des systèmes backend évolutifs (principalement en Java) et je me développe intentionnellement vers le frontend pour créer de meilleures expériences utilisateur et des produits numériques plus complets.",
       "cta": "Télécharger CV",
       "tooltipGitHub": "Explore mon GitHub",
-      "tooltipLinkedIn": "Visiter mon LinkedIn"
+      "tooltipLinkedIn": "Visiter mon LinkedIn",
+      "profileAlt": "Avatar de Jerry"
     },
     "about": {
-      "heading": "À propos de moi",
-      "description": "Je suis développeur backend spécialisé en Java, Spring Boot, APIs RESTful et systèmes distribués."
+      "aboutTitle": "À propos de moi",
+      "greeting": "L’histoire jusqu’ici:",
+      "description": [
+        "De l’industrie du tourisme au développement logiciel, je combine de solides compétences interpersonnelles avec une base technique robuste. Travaillant en anglais, espagnol et français, j’ai renforcé ma communication, mon empathie et ma capacité à résoudre des conflits.",
+        "Aujourd’hui, je me spécialise en Java, Spring Boot et API RESTful, en construisant des systèmes backend maintenables, évolutifs et sécurisés tout en utilisant des outils modernes pour optimiser les processus et collaborer efficacement sur des projets à fort impact."
+      ],
+      "profileAlt": "Avatar de Jerry"
     },
     "experience": {
       "heading": "Expérience",

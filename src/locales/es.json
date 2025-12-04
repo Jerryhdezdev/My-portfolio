@@ -43,18 +43,24 @@
     "logo": "Logo de Jerry.dev que enlaza al inicio"
   },
 
-
   "sections": {
     "home": {
       "introStart": "Hola, soy",
       "heroTagline": "Software Developer especializado en Java, Spring Boot y APIs RESTful",
       "description": "Construyo sistemas backend escalables (principalmente en Java) y estoy expandiéndome intencionalmente hacia el frontend para crear mejores experiencias de usuario y productos más completos.",
-      "cta":"Descargar CV",
-      "tooltipLinkedIn":"Visita mi LinkedIn",
-      "tooltipGitHub": "Echa un vistazo a mi GitHub"
+      "cta": "Descargar CV",
+      "tooltipLinkedIn": "Visita mi LinkedIn",
+      "tooltipGitHub": "Echa un vistazo a mi GitHub",
+      "profileAlt": "Avatar de Jerry"
     },
     "about": {
-      "description": "Soy un desarrollador backend especializado en Java, Spring Boot, APIs RESTful y sistemas distribuidos."
+      "aboutTitle": "Sobre mí",
+      "greeting": "Mi historia hasta ahora:",
+      "description": [
+        "Desde la industria del turismo hasta el desarrollo de software, combino sólidas habilidades interpersonales con una base técnica sólida. Trabajando en inglés, español y francés, fortalecí mi comunicación, empatía y capacidad para resolver conflictos.",
+        "Hoy me especializo en Java, Spring Boot y APIs RESTful, construyendo sistemas backend mantenibles, escalables y seguros, aprovechando herramientas modernas para optimizar procesos y colaborar eficazmente en proyectos de alto impacto."
+      ],
+      "profileAlt": "Avatar de Jerry"
     },
     "experience": {
       "description": "Explora mi trayectoria en desarrollo backend, desde aplicaciones empresariales en Java hasta microservicios nativos en la nube."
@@ -69,5 +75,4 @@
       "description": "Colaboremos — escríbeme para hablar sobre soluciones backend, arquitectura de sistemas o consultoría técnica."
     }
   }
-
 }

@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
 import { Tooltip } from "../components/Tooltip";
 import { SectionDivider } from "../components/SectionDivider";
-import RetroButton from "../components/RetroButton";
+import { RetroButton } from "../components/RetroButton";
 import profileLight from "../assets/images/profileLight.webp";
 import profileDark from "../assets/images/profileDark.webp";
 import profileLightMobile from "../assets/images/profileLightMobile.webp";
@@ -16,35 +15,12 @@ interface HomeProps {
 
 export function Home({ theme }: HomeProps) {
   const { t } = useTranslation();
-  const [profileImg, setProfileImg] = useState(profileLightMobile); // default
-
-  useEffect(() => {
-    // Pick the right image based on theme and screen size
-    const isMobile = window.innerWidth <= 768;
-    if (theme === "dark") {
-      setProfileImg(isMobile ? profileDarkMobile : profileDark);
-    } else {
-      setProfileImg(isMobile ? profileLightMobile : profileLight);
-    }
-
-    const handleResize = () => {
-      const isMobileResize = window.innerWidth <= 768;
-      if (theme === "dark") {
-        setProfileImg(isMobileResize ? profileDarkMobile : profileDark);
-      } else {
-        setProfileImg(isMobileResize ? profileLightMobile : profileLight);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [theme]);
 
   return (
     <section
       id="home"
       aria-labelledby="home-heading"
-      className="scroll-mt-20 px-6 pt-10 pb-16"
+      className="scroll-mt-20 px-6 py-10 min-h-screen flex flex-col justify-center items-center md:items-start"
     >
       <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
         {/* Text Block */}
@@ -122,17 +98,47 @@ export function Home({ theme }: HomeProps) {
         </div>
 
         {/* Profile image */}
-        <img
-          src={profileImg}
-          alt="Jerry profile picture"
-          className="rubber-hose md:w-90 md:h-90 lg:w-120 lg:h-120 order-2"
-        />
+        <picture className="order-2 block">
+          {/* Desktop image */}
+          <source
+            media="(min-width: 768px)"
+            srcSet={theme === "dark" ? profileDark : profileLight}
+            type="image/webp"
+          />
+
+          {/* Mobile image */}
+          <source
+            media="(max-width: 767px)"
+            srcSet={theme === "dark" ? profileDarkMobile : profileLightMobile}
+            type="image/webp"
+          />
+
+          {/* Fallback */}
+          <img
+            src={theme === "dark" ? profileDark : profileLight}
+            alt={t("sections.home.profileAlt", "Jerry’s avatar")}
+            loading="lazy"
+            decoding="async"
+            draggable="false"
+            className="
+      rubber-hose
+    object-contain
+    w-full
+    max-w-[500px]                /* mobile */
+    md:max-w-[700px]            /* tablet */
+    mx-auto
+    "
+          />
+        </picture>
 
         {/* Mobile: Button + Icons in one row */}
         <div className="block md:hidden order-3 mt-4">
           <div className="flex items-center justify-center gap-4">
             {/* Button */}
-            <RetroButton text={t("sections.home.cta")} />
+            <RetroButton
+              text={t("sections.home.cta")}
+              className="whitespace-nowrap"
+            />
 
             {/* GitHub Icon */}
             <Tooltip labelKey="sections.home.tooltipGitHub">
@@ -174,11 +180,13 @@ export function Home({ theme }: HomeProps) {
       </div>
 
       {/* Divider at the bottom of Home section */}
-      <SectionDivider
-        className="justify-start md:justify-end gap-10 md:gap-20"
-        primaryClass="w-[500px] md:w-[600px] lg:w-[800px]"
-        altClass="w-[300px] md:w-[340px] lg:w-[375px]"
-      />
+      <div className="col-span-2 w-full sm:-mt-3 lg:mt-12 order-3">
+        <SectionDivider
+          className="justify-start md:justify-start gap-10 md:gap-20"
+          primaryClass="w-[500px] md:w-[600px] lg:w-[800px]"
+          altClass="w-[300px] md:w-[340px] lg:w-[375px]"
+        />
+      </div>
     </section>
   );
 }

@@ -51,10 +51,17 @@
       "description": "I build scalable backend systems (mainly in Java) and I'm intentionally expanding into frontend to craft better user experiences and more complete digital products.",
       "cta": "Download CV",
       "tooltipGitHub": "Check out my GitHub",
-      "tooltipLinkedIn": "Visit my LinkedIn"
+      "tooltipLinkedIn": "Visit my LinkedIn",
+      "profileAlt": "Jerry’s avatar"
     },
     "about": {
-      "description": "I’m a backend developer specializing in Java, Spring Boot, RESTful APIs, and distributed systems."
+      "aboutTitle": "About me",
+      "greeting": "The story so far:",
+      "description": [
+        "From the tourism industry to software development, I combine strong interpersonal skills with a solid technical foundation. Working in English, Spanish, and French, I honed my communication, empathy, and conflict-resolution abilities.",
+        "I now specialize in Java, Spring Boot, and RESTful APIs, building maintainable, scalable, and secure backend systems while leveraging modern tools to optimize processes and collaborate effectively on high-impact projects."
+      ],
+      "profileAlt": "Jerry’s avatar"
     },
     "experience": {
       "description": "Explore my journey in backend development, from enterprise Java applications to cloud-native microservices."

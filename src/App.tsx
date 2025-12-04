@@ -32,9 +32,9 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       <main className="pt-20 flex-1 w-full" role="main">
-        <div className="w-full max-w-[1400px] mx-auto px-6 space-y-24">
-           <Home theme={theme} />
-          <About />
+        <div className="w-full max-w-[1400px] mx-auto px-6 ">
+          <Home theme={theme} />
+          <About theme={theme} />
           <Experience />
           <Technologies />
           <Projects />

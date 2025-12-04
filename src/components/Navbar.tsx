@@ -68,27 +68,30 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
   }, [isOpen]);
 
   // IntersectionObserver for active section
-  useEffect(() => {
-    const sections = MENU_ITEMS.map((item) =>
-      document.getElementById(item.id)
-    ).filter((el): el is HTMLElement => el !== null);
+useEffect(() => {
+  const sections = MENU_ITEMS.map((item) =>
+    document.getElementById(item.id)
+  ).filter((el): el is HTMLElement => el !== null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            history.replaceState(null, "", `#${entry.target.id}`);
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6, rootMargin: "-70px 0px -30% 0px" }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+          history.replaceState(null, "", `#${entry.target.id}`);
+        }
+      });
+    },
+    {
+      threshold: 0.3,              // much better for your layout
+      rootMargin: "-80px 0px 0px", // matches your scroll-mt-20 approx
+    }
+  );
 
-    sections.forEach((section) => observer.observe(section));
+  sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect();
-  }, []);
+  return () => observer.disconnect();
+}, []);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";

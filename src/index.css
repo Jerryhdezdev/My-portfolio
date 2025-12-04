@@ -15,6 +15,7 @@ html:not(.theme-ready) * {
   transition: none !important;
 }
 
+
 /* color-variable changes animate smoothly */
 :root,
 [data-theme="light"],

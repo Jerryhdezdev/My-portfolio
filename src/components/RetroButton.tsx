@@ -1,17 +1,14 @@
-// RetroButton.tsx
-import React from "react";
-
 interface RetroButtonProps {
-  text: string;             
-  onClick?: () => void;      
-  className?: string;         
+  text: string;
+  onClick?: () => void;
+  className?: string;
 }
 
-const RetroButton: React.FC<RetroButtonProps> = ({
+export function RetroButton({
   text,
   onClick,
   className = "",
-}) => {
+}: RetroButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -31,13 +28,11 @@ const RetroButton: React.FC<RetroButtonProps> = ({
 
         active:shadow-none active:translate-x-1 active:translate-y-1
 
-    focus:outline-none
-    focus-visible:ring-2
-    focus-visible:ring-[#d2ad4b]
-    focus-visible:ring-offset-2
-    focus-visible:ring-offset-(--color-bg-navbarAndFooter)
-
-
+        focus:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-[#d2ad4b]
+        focus-visible:ring-offset-2
+        focus-visible:ring-offset-(--color-bg-navbarAndFooter)
 
         ${className}
       `}
@@ -45,6 +40,4 @@ const RetroButton: React.FC<RetroButtonProps> = ({
       {text}
     </button>
   );
-};
-
-export default RetroButton;
+}
