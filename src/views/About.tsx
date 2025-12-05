@@ -71,7 +71,7 @@ export function About({ theme }: AboutProps) {
       </div>
 
       {/* Divider */}
-      <div className="w-full lg:-mt-5">
+      <div className="w-full xl:mt-15 ">
         <SectionDivider
           className="justify-start md:justify-start gap-10 md:gap-20"
           primaryClass="w-[300px] md:w-[340px] lg:w-[375px]"

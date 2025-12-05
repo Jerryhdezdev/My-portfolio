@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 export function SEO() {
   const { t, i18n } = useTranslation();
 
-  const siteUrl = "#"; // Replace with your actual domain
+  const siteUrl = "#"; // Replace later with my domain
   const ogImage = `${siteUrl}/logo/og-banner.webp`;
 
   return (
@@ -64,11 +64,12 @@ export function SEO() {
       <meta name="twitter:title" content={t("meta.title")} />
       <meta name="twitter:description" content={t("meta.description")} />
       <meta name="twitter:image" content={ogImage} />
-
+      
+      {/* Replace with my domain */}
       <script type="application/ld+json">
   {`
     {
-      "@context": "https://schema.org",
+      "@context": "https://schema.org", 
       "@type": "Person",
       "name": "Jerry",
       "url": "https://yourdomain.com",
@@ -79,8 +80,8 @@ export function SEO() {
         "name": "Jerry.dev"
       },
       "sameAs": [
-        "https://www.linkedin.com/in/yourprofile",
-        "https://github.com/yourprofile"
+        "https://www.linkedin.com/in/jerry-hernandez-dev",
+        "https://github.com/Ghdez13"
       ]
     }
   `}

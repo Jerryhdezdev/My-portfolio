@@ -46,7 +46,7 @@
   "sections": {
     "home": {
       "introStart": "Hola, soy",
-      "heroTagline": "Software Developer especializado en Java, Spring Boot y APIs RESTful",
+      "heroTagline": "Software Developer construyendo experiencia en Java, Spring Boot y APIs RESTful",
       "description": "Construyo sistemas backend escalables (principalmente en Java) y estoy expandiéndome intencionalmente hacia el frontend para crear mejores experiencias de usuario y productos más completos.",
       "cta": "Descargar CV",
       "tooltipLinkedIn": "Visita mi LinkedIn",
@@ -57,8 +57,8 @@
       "aboutTitle": "Sobre mí",
       "greeting": "Mi historia hasta ahora:",
       "description": [
-        "Desde la industria del turismo hasta el desarrollo de software, combino sólidas habilidades interpersonales con una base técnica sólida. Trabajando en inglés, español y francés, fortalecí mi comunicación, empatía y capacidad para resolver conflictos.",
-        "Hoy me especializo en Java, Spring Boot y APIs RESTful, construyendo sistemas backend mantenibles, escalables y seguros, aprovechando herramientas modernas para optimizar procesos y colaborar eficazmente en proyectos de alto impacto."
+        "Desde la industria del turismo hasta el desarrollo de software, combino sólidas habilidades interpersonales con una base técnica firme. Trabajando en inglés, español y francés, he perfeccionado mis capacidades de comunicación, empatía y resolución de conflictos.",
+        "Actualmente me estoy enfocando en Java, Spring Boot y API RESTful, construyendo sistemas backend mantenibles, escalables y seguros, mientras aprovecho herramientas modernas para optimizar los flujos de trabajo y contribuir de manera efectiva a proyectos de alto impacto."
       ],
       "profileAlt": "Avatar de Jerry"
     },

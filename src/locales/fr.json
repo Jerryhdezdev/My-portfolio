@@ -45,7 +45,7 @@
   "sections": {
     "home": {
       "introStart": "Salut, je suis",
-      "heroTagline": "Développeur logiciel spécialisé en Java, Spring Boot et API RESTful",
+      "heroTagline": "Développeur Logiciel en train de développer son expérience en Java, Spring Boot et API RESTful",
       "description": "Je construis des systèmes backend évolutifs (principalement en Java) et je me développe intentionnellement vers le frontend pour créer de meilleures expériences utilisateur et des produits numériques plus complets.",
       "cta": "Télécharger CV",
       "tooltipGitHub": "Explore mon GitHub",
@@ -56,8 +56,8 @@
       "aboutTitle": "À propos de moi",
       "greeting": "L’histoire jusqu’ici:",
       "description": [
-        "De l’industrie du tourisme au développement logiciel, je combine de solides compétences interpersonnelles avec une base technique robuste. Travaillant en anglais, espagnol et français, j’ai renforcé ma communication, mon empathie et ma capacité à résoudre des conflits.",
-        "Aujourd’hui, je me spécialise en Java, Spring Boot et API RESTful, en construisant des systèmes backend maintenables, évolutifs et sécurisés tout en utilisant des outils modernes pour optimiser les processus et collaborer efficacement sur des projets à fort impact."
+        "De l’industrie du tourisme au développement logiciel, je combine de solides compétences interpersonnelles avec une base technique solide. Travaillant en anglais, espagnol et français, j’ai perfectionné mes capacités de communication, d’empathie et de gestion des conflits.",
+        "Je me concentre actuellement sur Java, Spring Boot et les API RESTful, en développant des systèmes backend fiables, évolutifs et sécurisés, tout en utilisant des outils modernes pour optimiser les flux de travail et contribuer efficacement à des projets à fort impact."
       ],
       "profileAlt": "Avatar de Jerry"
     },

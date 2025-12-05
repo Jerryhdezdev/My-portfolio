@@ -47,7 +47,7 @@
   "sections": {
     "home": {
       "introStart": "Hello, I'm",
-      "heroTagline": "Software Developer specialized in Java, Spring Boot & RESTful APIs",
+      "heroTagline": "Software Developer building experience in Java, Spring Boot & RESTful APIs",
       "description": "I build scalable backend systems (mainly in Java) and I'm intentionally expanding into frontend to craft better user experiences and more complete digital products.",
       "cta": "Download CV",
       "tooltipGitHub": "Check out my GitHub",
@@ -58,8 +58,8 @@
       "aboutTitle": "About me",
       "greeting": "The story so far:",
       "description": [
-        "From the tourism industry to software development, I combine strong interpersonal skills with a solid technical foundation. Working in English, Spanish, and French, I honed my communication, empathy, and conflict-resolution abilities.",
-        "I now specialize in Java, Spring Boot, and RESTful APIs, building maintainable, scalable, and secure backend systems while leveraging modern tools to optimize processes and collaborate effectively on high-impact projects."
+        "From the tourism industry to software development, I combine strong interpersonal skills with a solid technical foundation. Working in English, Spanish, and French, I’ve honed my communication, empathy, and conflict-resolution abilities.",
+        "I’m currently focusing on Java, Spring Boot, and RESTful APIs, building maintainable, scalable, and secure backend systems while leveraging modern tools to optimize workflows and contribute effectively to high-impact projects."
       ],
       "profileAlt": "Jerry’s avatar"
     },

@@ -15,7 +15,6 @@ html:not(.theme-ready) * {
   transition: none !important;
 }
 
-
 /* color-variable changes animate smoothly */
 :root,
 [data-theme="light"],
@@ -31,16 +30,22 @@ html:not(.theme-ready) * {
   --color-text-secondary: #d2ae4d;
   --color-text-tertiary: #b24449;
   --color-text-quaternary: #00915d;
-  --color-text-button:#ffffff;
+  --color-text-button: #ffffff;
 
   --color-hover-text-navbarAndFooter: #d2ad4b;
 
   --color-bg-navbarAndFooter: #336fa3;
-  --color-bg-button:#336fa3;
+  --color-bg-button: #336fa3;
   --color-bg-body: #f7f6f4;
 
-    /* retro cartoon button shadow */
-  --retro-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  --color-bg-square-primary: #dd781f;
+  --color-bg-square-secondary: #c37a77;
+  --color-bg-square-tertiary: #00915d;
+  --color-bg-square-quaternary: #336fa3;
+  --color-bg-square-fifth: #d2ad4b;
+
+  /* retro cartoon button shadow */
+  --retro-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 }
 
 /* Dark Mode palette */
@@ -50,16 +55,22 @@ html:not(.theme-ready) * {
   --color-text-secondary: #ffb84d;
   --color-text-tertiary: #c76d70;
   --color-text-quaternary: #3bb18a;
-  --color-text-button:#2e2e2e;
+  --color-text-button: #2e2e2e;
 
   --color-hover-text-navbarAndFooter: #ffb84d;
-  --color-bg-button:#ffb84d;
+  --color-bg-button: #ffb84d;
 
   --color-bg-navbarAndFooter: #1f3a56;
   --color-bg-body: #121212;
 
-      /* retro cartoon button shadow */
-    --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
+  --color-bg-square-primary: #8e4e12;
+  --color-bg-square-secondary: #8c5150;
+  --color-bg-square-tertiary: #006e49;
+  --color-bg-square-quaternary: #245479;
+  --color-bg-square-fifth: #8f7731;
+
+  /* retro cartoon button shadow */
+  --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
 }
 
 /* Font family*/

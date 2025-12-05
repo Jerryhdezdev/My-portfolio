@@ -180,7 +180,7 @@ export function Home({ theme }: HomeProps) {
       </div>
 
       {/* Divider at the bottom of Home section */}
-      <div className="col-span-2 w-full sm:-mt-3 lg:mt-12 order-3">
+      <div className="col-span-2 w-full sm:-mt-3 lg:mt-12 xl:mt-20 order-3">
         <SectionDivider
           className="justify-start md:justify-start gap-10 md:gap-20"
           primaryClass="w-[500px] md:w-[600px] lg:w-[800px]"
