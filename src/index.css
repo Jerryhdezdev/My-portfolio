@@ -36,13 +36,15 @@ html:not(.theme-ready) * {
 
   --color-bg-navbarAndFooter: #336fa3;
   --color-bg-button: #336fa3;
-  --color-bg-body: #f7f6f4;
+  --color-bg-body: #f5f0e5;
 
-  --color-bg-square-primary: #dd781f;
-  --color-bg-square-secondary: #c37a77;
-  --color-bg-square-tertiary: #00915d;
-  --color-bg-square-quaternary: #336fa3;
-  --color-bg-square-fifth: #d2ad4b;
+  /* Card color palette*/
+  --color-shadow-card-primary: #121212;
+  --color-bg-card-primary: #c8d69b;
+  --color-text-card-primary: #3971b8;
+  --color-bg-card-secondary: #deaa79;
+  --color-text-card-secondary: #335c67;
+
 
   /* retro cartoon button shadow */
   --retro-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
@@ -58,45 +60,74 @@ html:not(.theme-ready) * {
   --color-text-button: #2e2e2e;
 
   --color-hover-text-navbarAndFooter: #ffb84d;
-  --color-bg-button: #ffb84d;
 
   --color-bg-navbarAndFooter: #1f3a56;
+  --color-bg-button: #ffb84d;
   --color-bg-body: #121212;
 
-  --color-bg-square-primary: #8e4e12;
-  --color-bg-square-secondary: #8c5150;
-  --color-bg-square-tertiary: #006e49;
-  --color-bg-square-quaternary: #245479;
-  --color-bg-square-fifth: #8f7731;
+  /* Card color palette*/
+  --color-shadow-card-primary: #3b3b3b;
+  --color-bg-card-primary: #659287;
+  --color-text-card-primary: #c8d69b;
+  --color-bg-card-secondary: #1f3a44;
+  --color-text-card-secondary: #f0dfc9;
+
 
   /* retro cartoon button shadow */
   --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
 }
 
-/* Font family*/
+/* classes that use color variable for bg cards */
+.card-primary {
+  background-color: var(--color-bg-card-primary);
+  color: var(--color-text-card-primary);
+}
+
+.card-secondary {
+  background-color: var(--color-bg-card-secondary);
+  color: var(--color-text-card-secondary);
+}
+
+.card-tertiary {
+  background-color: var(--color-bg-card-tertiary);
+}
+
+.card-quaternary {
+  background-color: var(--color-bg-card-quaternary);
+}
+
+.card-fifth {
+  background-color: var(--color-bg-card-fifth);
+}
+
+/* Font family */
 @font-face {
   font-family: "Londrina";
   src: url("/src/assets/fonts/LondrinaSolid-Thin.ttf") format("truetype");
-  font-weight: 100; /*Thin*/
+  font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Londrina";
   src: url("/src/assets/fonts/LondrinaSolid-Light.ttf") format("truetype");
-  font-weight: 300; /*Light*/
+  font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Londrina";
   src: url("/src/assets/fonts/LondrinaSolid-Regular.ttf") format("truetype");
-  font-weight: 400; /*Regular*/
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Londrina";
   src: url("/src/assets/fonts/LondrinaSolid-Black.ttf") format("truetype");
-  font-weight: 900; /*Black*/
+  font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 /* outline style Name for --color-text-secondary*/

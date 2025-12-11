@@ -62,8 +62,29 @@
       "profileAlt": "Avatar de Jerry"
     },
     "experience": {
-      "heading": "Expérience",
-      "description": "Explorez mon parcours en développement backend, des applications Java d'entreprise aux microservices cloud-native."
+      "title": "Expérience",
+      "subtitle": "Choses que j’ai créées",
+      "imageAlt": "Illustration décorative pour la section expérience",
+      "items": [
+        {
+          "title": "Portfolio Personnel",
+          "description": [
+            "- Développé un portfolio multilingue avec React, TypeScript et Tailwind.",
+            "- Implémenté les thèmes clair et sombre avec une gestion d’état propre.",
+            "- Conçu une interface accessible et responsive pour plusieurs appareils.",
+            "- Structuré le projet avec des composants réutilisables et une architecture évolutive."
+          ]
+        },
+        {
+          "title": "MVP Refuge pour Animaux",
+          "description": [
+            "- Développé un MVP multilingue et évolutif avec React, JavaScript et Tailwind.",
+            "- Amélioré l’accessibilité et optimisé les mises en page responsives.",
+            "- Créé un parcours d’adoption intuitif pour simplifier l’expérience utilisateur.",
+            "- Organisé le projet avec des composants propres et une architecture claire."
+          ]
+        }
+      ]
     },
     "technologies": {
       "heading": "Technologies",

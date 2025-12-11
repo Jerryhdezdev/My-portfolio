@@ -35,7 +35,7 @@ function App() {
         <div className="w-full max-w-[1400px] mx-auto px-6 ">
           <Home theme={theme} />
           <About theme={theme} />
-          <Experience />
+          <Experience theme={theme}/>
           <Technologies />
           <Projects />
           <Contact />

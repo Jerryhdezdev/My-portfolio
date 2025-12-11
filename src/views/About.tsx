@@ -24,7 +24,7 @@ export function About({ theme }: AboutProps) {
       {/* Section title*/}
       <h1
         id="about-heading"
-        className="w-full text-center text-(--color-text-primary) mb-10 font-extrabold text-3xl lg:text-4xl xl:text-5xl"
+        className="w-full text-center text-(--color-text-primary) mb-10 font-extrabold text-[45px] md:text-5xl lg:text-8xl"
       >
         {t("sections.about.aboutTitle", "About Me")}
       </h1>
@@ -33,7 +33,7 @@ export function About({ theme }: AboutProps) {
       <div className="w-full md:grid md:grid-cols-2 md:gap-10 items-center">
         {/* Text: greeting + paragraphs */}
         <div className="order-1 md:order-2 flex flex-col justify-center">
-          <h2 className="text-4xl lg:text-7xl text-start text-(--color-text-secondary) big-outline md:text-start mb-6 font-bold starburst-pop">
+          <h2 className="text-4xl lg:text-6xl text-start text-(--color-text-secondary) big-outline md:text-start mb-6 font-bold starburst-pop">
             {t("sections.about.greeting", "Hello...")}
           </h2>
 

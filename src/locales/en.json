@@ -64,7 +64,29 @@
       "profileAlt": "Jerry’s avatar"
     },
     "experience": {
-      "description": "Explore my journey in backend development, from enterprise Java applications to cloud-native microservices."
+      "title": "Experience",
+      "subtitle": "Things I’ve crafted",
+      "imageAlt": "Decorative cartoon for experience section",
+      "items": [
+        {
+          "title": "Personal Portfolio",
+          "description": [
+            "- Developed a multilingual portfolio using React, TypeScript, and Tailwind.",
+            "- Implemented dark and light themes with clean state management.",
+            "- Designed a responsive and accessible interface for multiple devices.",
+            "- Structured the project with reusable components and scalable architecture."
+          ]
+        },
+        {
+          "title": "MVP Animal Shelter",
+          "description": [
+            "- Developed a scalable, multilingual MVP using React, JavaScript, and Tailwind.",
+            "- Enhanced accessibility and optimized layouts across devices.",
+            "- Created an intuitive user flow that simplifies the adoption process.",
+            "- Organized the project with clean components and clear architecture."
+          ]
+        }
+      ]
     },
     "technologies": {
       "description": "Languages, frameworks, and tools I use to build secure, scalable, and maintainable backend systems."

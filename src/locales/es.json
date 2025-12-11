@@ -63,7 +63,29 @@
       "profileAlt": "Avatar de Jerry"
     },
     "experience": {
-      "description": "Explora mi trayectoria en desarrollo backend, desde aplicaciones empresariales en Java hasta microservicios nativos en la nube."
+      "title": "Experiencia",
+      "subtitle": "Cosas que he creado",
+      "imageAlt": "Imagen decorativa para la sección de experiencia",
+      "items": [
+        {
+          "title": "Portafolio Personal",
+          "description": [
+            "- Desarrollé un portafolio multilingüe usando React, TypeScript y Tailwind.",
+            "- Implementé los temas claro y oscuro con una gestión de estado limpia.",
+            "- Diseñé una interfaz accesible y responsiva para múltiples dispositivos.",
+            "- Estructuré el proyecto con componentes reutilizables y una arquitectura escalable."
+          ]
+        },
+        {
+          "title": "MVP Refugio de Animales",
+          "description": [
+            "- Desarrollé un MVP multilingüe y escalable usando React, JavaScript y Tailwind.",
+            "- Mejoré la accesibilidad y optimicé los diseños responsivos para varios dispositivos.",
+            "- Creé un flujo de adopción intuitivo para simplificar la experiencia del usuario.",
+            "- Organicé el proyecto con componentes limpios y una arquitectura clara."
+          ]
+        }
+      ]
     },
     "technologies": {
       "description": "Lenguajes, frameworks y herramientas que uso para construir sistemas backend seguros, escalables y mantenibles."
