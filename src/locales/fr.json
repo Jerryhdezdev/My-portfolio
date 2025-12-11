@@ -8,7 +8,7 @@
     "about": "À propos de moi",
     "experience": "Expérience",
     "technologies": "Technologies",
-    "project": "Projets",
+    "projects": "Projets",
     "contact": "Contact",
     "tooltipLogo": "Retour à l'accueil",
     "menuOpen": "Menu",
@@ -18,7 +18,7 @@
       "about": "En savoir plus sur mon parcours backend",
       "experience": "Voir mon expérience en développement backend",
       "technologies": "Explorer les technologies backend que j'utilise",
-      "project": "Voir mes projets backend",
+      "projects": "Voir mes projets backend",
       "contact": "Me contacter"
     }
   },
@@ -44,16 +44,47 @@
   },
   "sections": {
     "home": {
-      "heading": "Bienvenue sur Jerry.dev",
-      "description": "Création de systèmes backend robustes et évolutifs avec Java, Spring Boot et architecture microservices."
+      "introStart": "Salut, je suis",
+      "heroTagline": "Développeur Logiciel en train de développer son expérience en Java, Spring Boot et API RESTful",
+      "description": "Je construis des systèmes backend évolutifs (principalement en Java) et je me développe intentionnellement vers le frontend pour créer de meilleures expériences utilisateur et des produits numériques plus complets.",
+      "cta": "Télécharger CV",
+      "tooltipGitHub": "Explore mon GitHub",
+      "tooltipLinkedIn": "Visiter mon LinkedIn",
+      "profileAlt": "Avatar de Jerry"
     },
     "about": {
-      "heading": "À propos de moi",
-      "description": "Je suis développeur backend spécialisé en Java, Spring Boot, APIs RESTful et systèmes distribués."
+      "aboutTitle": "À propos de moi",
+      "greeting": "L’histoire jusqu’ici:",
+      "description": [
+        "De l’industrie du tourisme au développement logiciel, je combine de solides compétences interpersonnelles avec une base technique solide. Travaillant en anglais, espagnol et français, j’ai perfectionné mes capacités de communication, d’empathie et de gestion des conflits.",
+        "Je me concentre actuellement sur Java, Spring Boot et les API RESTful, en développant des systèmes backend fiables, évolutifs et sécurisés, tout en utilisant des outils modernes pour optimiser les flux de travail et contribuer efficacement à des projets à fort impact."
+      ],
+      "profileAlt": "Avatar de Jerry"
     },
     "experience": {
-      "heading": "Expérience",
-      "description": "Explorez mon parcours en développement backend, des applications Java d'entreprise aux microservices cloud-native."
+      "title": "Expérience",
+      "subtitle": "Choses que j’ai créées",
+      "imageAlt": "Illustration décorative pour la section expérience",
+      "items": [
+        {
+          "title": "Portfolio Personnel",
+          "description": [
+            "- Développé un portfolio multilingue avec React, TypeScript et Tailwind.",
+            "- Implémenté les thèmes clair et sombre avec une gestion d’état propre.",
+            "- Conçu une interface accessible et responsive pour plusieurs appareils.",
+            "- Structuré le projet avec des composants réutilisables et une architecture évolutive."
+          ]
+        },
+        {
+          "title": "MVP Refuge pour Animaux",
+          "description": [
+            "- Développé un MVP multilingue et évolutif avec React, JavaScript et Tailwind.",
+            "- Amélioré l’accessibilité et optimisé les mises en page responsives.",
+            "- Créé un parcours d’adoption intuitif pour simplifier l’expérience utilisateur.",
+            "- Organisé le projet avec des composants propres et une architecture claire."
+          ]
+        }
+      ]
     },
     "technologies": {
       "heading": "Technologies",

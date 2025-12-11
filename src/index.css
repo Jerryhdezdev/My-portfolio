@@ -6,6 +6,11 @@ html.theme-transition {
     border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: "Londrina", Arial, sans-serif;
+}
+
 html:not(.theme-ready) * {
   transition: none !important;
 }
@@ -21,13 +26,28 @@ html:not(.theme-ready) * {
 /* Light Mode palette */
 :root {
   --color-text-navbar: #ffffff;
-  --color-text-primary: #2e2e2e;
-  --color-text-secondary: #fbbd35;
+  --color-text-primary: #102217;
+  --color-text-secondary: #d2ae4d;
+  --color-text-tertiary: #b24449;
+  --color-text-quaternary: #00915d;
+  --color-text-button: #ffffff;
 
   --color-hover-text-navbarAndFooter: #d2ad4b;
 
   --color-bg-navbarAndFooter: #336fa3;
-  --color-bg-body: #f7f6f4;
+  --color-bg-button: #336fa3;
+  --color-bg-body: #f5f0e5;
+
+  /* Card color palette*/
+  --color-shadow-card-primary: #121212;
+  --color-bg-card-primary: #c8d69b;
+  --color-text-card-primary: #3971b8;
+  --color-bg-card-secondary: #deaa79;
+  --color-text-card-secondary: #335c67;
+
+
+  /* retro cartoon button shadow */
+  --retro-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 }
 
 /* Dark Mode palette */
@@ -35,11 +55,102 @@ html:not(.theme-ready) * {
   --color-text-navbar: #fdfdfd;
   --color-text-primary: #e6e6e6;
   --color-text-secondary: #ffb84d;
+  --color-text-tertiary: #c76d70;
+  --color-text-quaternary: #3bb18a;
+  --color-text-button: #2e2e2e;
 
   --color-hover-text-navbarAndFooter: #ffb84d;
 
   --color-bg-navbarAndFooter: #1f3a56;
+  --color-bg-button: #ffb84d;
   --color-bg-body: #121212;
+
+  /* Card color palette*/
+  --color-shadow-card-primary: #3b3b3b;
+  --color-bg-card-primary: #659287;
+  --color-text-card-primary: #c8d69b;
+  --color-bg-card-secondary: #1f3a44;
+  --color-text-card-secondary: #f0dfc9;
+
+
+  /* retro cartoon button shadow */
+  --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
+}
+
+/* classes that use color variable for bg cards */
+.card-primary {
+  background-color: var(--color-bg-card-primary);
+  color: var(--color-text-card-primary);
+}
+
+.card-secondary {
+  background-color: var(--color-bg-card-secondary);
+  color: var(--color-text-card-secondary);
+}
+
+.card-tertiary {
+  background-color: var(--color-bg-card-tertiary);
+}
+
+.card-quaternary {
+  background-color: var(--color-bg-card-quaternary);
+}
+
+.card-fifth {
+  background-color: var(--color-bg-card-fifth);
+}
+
+/* Font family */
+@font-face {
+  font-family: "Londrina";
+  src: url("/src/assets/fonts/LondrinaSolid-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Londrina";
+  src: url("/src/assets/fonts/LondrinaSolid-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Londrina";
+  src: url("/src/assets/fonts/LondrinaSolid-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Londrina";
+  src: url("/src/assets/fonts/LondrinaSolid-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* outline style Name for --color-text-secondary*/
+.big-outline {
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.navbar-scroll.navbar-scrolled {
+  background: rgba(51, 111, 163, 0.8); /* same #336fa3 with 45% opacity */
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: background 0.3s ease-in-out;
+}
+
+/* When mobile menu is OPEN, force original SOLID style */
+.navbar-scroll.mobile-open {
+  background: var(
+    --color-bg-navbarAndFooter
+  ) !important; /* original theme color */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transition: none !important;
 }
 
 /* Base Body Styles */
@@ -56,10 +167,19 @@ body {
 
 /* Wiggle animation */
 @keyframes wiggle {
-  0%,100% { transform: rotate(0deg); }
-  25% { transform: rotate(-6deg); }
-  50% { transform: rotate(6deg); }
-  75% { transform: rotate(-6deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  75% {
+    transform: rotate(-6deg);
+  }
 }
 
 .hover\:wiggle:hover {
@@ -117,7 +237,6 @@ body {
   border-radius: 1px;
 }
 
-
 /* Toast background, text, and border based on your CSS variables */
 .custom-toast {
   background: var(--color-bg-navbarAndFooter) !important;
@@ -159,4 +278,130 @@ body {
 .Toastify__toast--success .Toastify__toast-icon {
   color: var(--color-hover-text-navbarAndFooter) !important;
   background: transparent !important;
+}
+
+/* Animation profile image*/
+@keyframes rubberHose {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.08) rotate(-2deg);
+  }
+  60% {
+    transform: scale(0.95) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.rubber-hose {
+  animation: rubberHose 1s ease-out;
+}
+
+/* Animation profile name*/
+@keyframes starburstPop {
+  0% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.7) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.starburst-pop {
+  animation: starburstPop 1s ease-out;
+}
+
+/* Left: 4-line dashed section divider (alternating colors) */
+.section-divider {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+  gap: 4px;
+}
+
+.section-divider .line {
+  width: 100%;
+  height: 8px;
+  background-size: 15px 10px;
+  background-repeat: repeat-x;
+}
+
+.section-divider .line:nth-child(1) {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-text-secondary) 0 5px,
+    transparent 5px 10px
+  );
+  background-position: 0 0; /* NO offset */
+}
+
+.section-divider .line:nth-child(2) {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-text-tertiary) 0 5px,
+    transparent 5px 10px
+  );
+  background-position: 10px 0; /* shifted */
+}
+
+.section-divider .line:nth-child(3) {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-text-secondary) 0 5px,
+    transparent 5px 10px
+  );
+  background-position: 4px 0; /* more shifted */
+}
+
+.section-divider .line:nth-child(4) {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-text-tertiary) 0 5px,
+    transparent 5px 10px
+  );
+  background-position: 13px 0; /* even more shifted */
+}
+
+/* Right: 4-line dashed section divider (quaternary only) */
+.section-divider-alt {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+  gap: 4px;
+}
+
+.section-divider-alt .line {
+  width: 100%;
+  height: 8px;
+  background-size: 15px 10px;
+  background-repeat: repeat-x;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-text-quaternary) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+.section-divider-alt .line:nth-child(1) {
+  background-position: 0 0;
+}
+
+.section-divider-alt .line:nth-child(2) {
+  background-position: 10px 0;
+}
+
+.section-divider-alt .line:nth-child(3) {
+  background-position: 4px 0;
+}
+
+.section-divider-alt .line:nth-child(4) {
+  background-position: 13px 0;
 }

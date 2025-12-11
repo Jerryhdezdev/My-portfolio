@@ -8,7 +8,7 @@
     "about": "Sobre mí",
     "experience": "Experiencia",
     "technologies": "Tecnologías",
-    "project": "Proyectos",
+    "projects": "Proyectos",
     "contact": "Contacto",
     "tooltipLogo": "Volver a Home",
     "menuOpen": "Menú",
@@ -18,7 +18,7 @@
       "about": "Conoce más sobre mi trayectoria en backend",
       "experience": "Ver mi experiencia en desarrollo backend",
       "technologies": "Explora las tecnologías backend que uso",
-      "project": "Mira mis proyectos backend",
+      "projects": "Mira mis proyectos backend",
       "contact": "Contáctame"
     }
   },
@@ -42,29 +42,58 @@
     "menuToggle": "Menú móvil y selector de idioma",
     "logo": "Logo de Jerry.dev que enlaza al inicio"
   },
+
   "sections": {
     "home": {
-      "heading": "Bienvenido a Jerry.dev",
-      "description": "Construyendo sistemas backend robustos y escalables con Java, Spring Boot y arquitectura de microservicios."
+      "introStart": "Hola, soy",
+      "heroTagline": "Software Developer construyendo experiencia en Java, Spring Boot y APIs RESTful",
+      "description": "Construyo sistemas backend escalables (principalmente en Java) y estoy expandiéndome intencionalmente hacia el frontend para crear mejores experiencias de usuario y productos más completos.",
+      "cta": "Descargar CV",
+      "tooltipLinkedIn": "Visita mi LinkedIn",
+      "tooltipGitHub": "Echa un vistazo a mi GitHub",
+      "profileAlt": "Avatar de Jerry"
     },
     "about": {
-      "heading": "Sobre mí",
-      "description": "Soy un desarrollador backend especializado en Java, Spring Boot, APIs RESTful y sistemas distribuidos."
+      "aboutTitle": "Sobre mí",
+      "greeting": "Mi historia hasta ahora:",
+      "description": [
+        "Desde la industria del turismo hasta el desarrollo de software, combino sólidas habilidades interpersonales con una base técnica firme. Trabajando en inglés, español y francés, he perfeccionado mis capacidades de comunicación, empatía y resolución de conflictos.",
+        "Actualmente me estoy enfocando en Java, Spring Boot y API RESTful, construyendo sistemas backend mantenibles, escalables y seguros, mientras aprovecho herramientas modernas para optimizar los flujos de trabajo y contribuir de manera efectiva a proyectos de alto impacto."
+      ],
+      "profileAlt": "Avatar de Jerry"
     },
     "experience": {
-      "heading": "Experiencia",
-      "description": "Explora mi trayectoria en desarrollo backend, desde aplicaciones empresariales en Java hasta microservicios nativos en la nube."
+      "title": "Experiencia",
+      "subtitle": "Cosas que he creado",
+      "imageAlt": "Imagen decorativa para la sección de experiencia",
+      "items": [
+        {
+          "title": "Portafolio Personal",
+          "description": [
+            "- Desarrollé un portafolio multilingüe usando React, TypeScript y Tailwind.",
+            "- Implementé los temas claro y oscuro con una gestión de estado limpia.",
+            "- Diseñé una interfaz accesible y responsiva para múltiples dispositivos.",
+            "- Estructuré el proyecto con componentes reutilizables y una arquitectura escalable."
+          ]
+        },
+        {
+          "title": "MVP Refugio de Animales",
+          "description": [
+            "- Desarrollé un MVP multilingüe y escalable usando React, JavaScript y Tailwind.",
+            "- Mejoré la accesibilidad y optimicé los diseños responsivos para varios dispositivos.",
+            "- Creé un flujo de adopción intuitivo para simplificar la experiencia del usuario.",
+            "- Organicé el proyecto con componentes limpios y una arquitectura clara."
+          ]
+        }
+      ]
     },
     "technologies": {
-      "heading": "Tecnologías",
       "description": "Lenguajes, frameworks y herramientas que uso para construir sistemas backend seguros, escalables y mantenibles."
     },
     "project": {
-      "heading": "Proyectos",
       "description": "Una muestra de proyectos backend que incluyen microservicios, gateways de API y despliegues en la nube."
     },
     "contact": {
-      "heading": "Contáctame",
       "description": "Colaboremos — escríbeme para hablar sobre soluciones backend, arquitectura de sistemas o consultoría técnica."
     }
   }

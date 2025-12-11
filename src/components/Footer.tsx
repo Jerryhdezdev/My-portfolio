@@ -57,11 +57,21 @@ export function Footer() {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 pb-6 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Logo with tooltip */}
         <div className="w-full md:w-auto flex justify-start">
-          <Tooltip labelKey="footer.tooltipLogo">
+          {/* Logo */}
+          <Tooltip labelKey="navbar.tooltipLogo">
             <Link
               to="/"
+              onClick={(e) => {
+                e.preventDefault(); // prevent route navigation
+                document
+                  .getElementById("home") // find your home section
+                  ?.scrollIntoView({ block: "start", behavior: "smooth" }); // scroll to its start
+              }}
               aria-label={t("aria.logo")}
-              className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d2ad4b] rounded-md"
+              className="inline-block focus:outline-none
+      focus-visible:ring-2 focus-visible:ring-[#d2ad4b]
+      focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-navbarAndFooter)
+      rounded-md"
             >
               <img
                 src="/logo/logo.webp"

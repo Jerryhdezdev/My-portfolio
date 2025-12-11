@@ -8,7 +8,7 @@
     "about": "About Me",
     "experience": "Experience",
     "technologies": "Technologies",
-    "project": "Projects",
+    "projects": "Projects",
     "contact": "Contact",
     "tooltipLogo": "Go back to Home",
     "menuOpen": "Menu",
@@ -18,7 +18,7 @@
       "about": "Learn more about my backend journey",
       "experience": "View my backend development experience",
       "technologies": "Explore backend technologies I use",
-      "project": "See my backend projects",
+      "projects": "See my backend projects",
       "contact": "Contact me"
     }
   },
@@ -34,7 +34,7 @@
 
   "meta": {
     "title": "Jerry Hdez | Portfolio",
-    "description": "Explore Jerry's expertise in Java, Spring Boot, microservices, and scalable backend architecture."
+    "description": "Explore Jerry's expertise in Java, Spring Boot, microservices, and scalable backend architecture"
   },
 
   "aria": {
@@ -46,27 +46,55 @@
 
   "sections": {
     "home": {
-      "heading": "Welcome to Jerry.dev",
-      "description": "Building robust, scalable backend systems with Java, Spring Boot, and microservices architecture."
+      "introStart": "Hello, I'm",
+      "heroTagline": "Software Developer building experience in Java, Spring Boot & RESTful APIs",
+      "description": "I build scalable backend systems (mainly in Java) and I'm intentionally expanding into frontend to craft better user experiences and more complete digital products.",
+      "cta": "Download CV",
+      "tooltipGitHub": "Check out my GitHub",
+      "tooltipLinkedIn": "Visit my LinkedIn",
+      "profileAlt": "Jerry’s avatar"
     },
     "about": {
-      "heading": "About Me",
-      "description": "I’m a backend developer specializing in Java, Spring Boot, RESTful APIs, and distributed systems."
+      "aboutTitle": "About me",
+      "greeting": "The story so far:",
+      "description": [
+        "From the tourism industry to software development, I combine strong interpersonal skills with a solid technical foundation. Working in English, Spanish, and French, I’ve honed my communication, empathy, and conflict-resolution abilities.",
+        "I’m currently focusing on Java, Spring Boot, and RESTful APIs, building maintainable, scalable, and secure backend systems while leveraging modern tools to optimize workflows and contribute effectively to high-impact projects."
+      ],
+      "profileAlt": "Jerry’s avatar"
     },
     "experience": {
-      "heading": "Experience",
-      "description": "Explore my journey in backend development, from enterprise Java applications to cloud-native microservices."
+      "title": "Experience",
+      "subtitle": "Things I’ve crafted",
+      "imageAlt": "Decorative cartoon for experience section",
+      "items": [
+        {
+          "title": "Personal Portfolio",
+          "description": [
+            "- Developed a multilingual portfolio using React, TypeScript, and Tailwind.",
+            "- Implemented dark and light themes with clean state management.",
+            "- Designed a responsive and accessible interface for multiple devices.",
+            "- Structured the project with reusable components and scalable architecture."
+          ]
+        },
+        {
+          "title": "MVP Animal Shelter",
+          "description": [
+            "- Developed a scalable, multilingual MVP using React, JavaScript, and Tailwind.",
+            "- Enhanced accessibility and optimized layouts across devices.",
+            "- Created an intuitive user flow that simplifies the adoption process.",
+            "- Organized the project with clean components and clear architecture."
+          ]
+        }
+      ]
     },
     "technologies": {
-      "heading": "Technologies",
       "description": "Languages, frameworks, and tools I use to build secure, scalable, and maintainable backend systems."
     },
     "project": {
-      "heading": "Projects",
       "description": "A showcase of backend projects including microservices, API gateways, and cloud deployments."
     },
     "contact": {
-      "heading": "Contact Me",
       "description": "Let’s collaborate — reach out to discuss backend solutions, system architecture, or technical consulting."
     }
   }
