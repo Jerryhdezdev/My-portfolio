@@ -35,7 +35,6 @@ h2:focus-visible {
   --color-text-primary: #102217;
   --color-text-secondary: #d2ae4d;
   --color-text-tertiary: #b24449;
-  --color-text-quaternary: #00915d;
   --color-text-button: #ffffff;
 
   --color-hover-text-navbarAndFooter: #d2ad4b;
@@ -43,6 +42,15 @@ h2:focus-visible {
   --color-bg-navbarAndFooter: #336fa3;
   --color-bg-button: #336fa3;
   --color-bg-body: #f1f0ec;
+
+  /* bg divider color */
+  --color-bg-divider-primary: #d2ae4d;
+  --color-bg-divider-secondary: #b24449;
+  --color-bg-divider-tertiary: #00915d;
+
+  /* bg Techcard color*/
+  --color-bg-tech-card-primary: #d2cec2;
+  --color-bg-tech-card-secondary: #63b8b2b6;
 
   /* Card color palette*/
   --color-shadow-card-primary: #121212;
@@ -55,13 +63,25 @@ h2:focus-visible {
   --retro-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 }
 
+  /* override bg Techcard color icon area light mode*/
+  .tech-frontend {
+    --color-bg-tech-card-secondary: #509099;
+  }
+
+  .tech-backend {
+    --color-bg-tech-card-secondary: #e7917e98;
+  }
+
+  .tech-tools {
+    --color-bg-tech-card-secondary: #9caa53ab;
+  }
+
 /* Dark Mode palette */
 [data-theme="dark"] {
   --color-text-navbar: #fdfdfd;
   --color-text-primary: #e6e6e6;
   --color-text-secondary: #ffb84d;
   --color-text-tertiary: #c76d70;
-  --color-text-quaternary: #3bb18a;
   --color-text-button: #2e2e2e;
 
   --color-hover-text-navbarAndFooter: #ffb84d;
@@ -69,6 +89,16 @@ h2:focus-visible {
   --color-bg-navbarAndFooter: #1f3a56;
   --color-bg-button: #ffb84d;
   --color-bg-body: #0d1117;
+
+  /* bg divider color */
+  --color-bg-divider-primary: #8a7232;
+  --color-bg-divider-secondary: #8f3b3f;
+  --color-bg-divider-tertiary: #066844;
+
+  /* bg Techcard color*/
+  --color-bg-tech-card-primary: #aaaa77e3;
+  --color-bg-tech-card-secondary: #63b8b2b6;
+
 
   /* Card color palette*/
   --color-shadow-card-primary: #3b3b3b;
@@ -79,6 +109,19 @@ h2:focus-visible {
 
   /* retro cartoon button shadow */
   --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
+}
+
+/* override bg TechCard color icon area dark mode*/
+[data-theme="dark"] .tech-frontend {
+  --color-bg-tech-card-secondary: #335f64a4;
+}
+
+[data-theme="dark"] .tech-backend {
+  --color-bg-tech-card-secondary: #7e4a4085;
+}
+
+[data-theme="dark"] .tech-tools {
+  --color-bg-tech-card-secondary: #596629b0;
 }
 
 /* classes that use color variable for bg cards */
@@ -171,7 +214,8 @@ body {
 
 /* Wiggle + scale animation for email icon */
 @keyframes wiggle {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1.22) rotate(0deg);
   }
   25% {
@@ -226,7 +270,6 @@ body {
     transition: none;
   }
 }
-
 
 /* Tooltip Style*/
 .tooltip-parent {
@@ -366,12 +409,12 @@ body {
   display: flex;
   flex-direction: column;
   margin: 3rem 0;
-  gap: 4px;
+  gap: 5px;
 }
 
 .section-divider .line {
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-size: 15px 10px;
   background-repeat: repeat-x;
 }
@@ -379,7 +422,7 @@ body {
 .section-divider .line:nth-child(1) {
   background-image: repeating-linear-gradient(
     to right,
-    var(--color-text-secondary) 0 5px,
+    var(--color-bg-divider-primary) 0 5px,
     transparent 5px 10px
   );
   background-position: 0 0; /* NO offset */
@@ -388,7 +431,7 @@ body {
 .section-divider .line:nth-child(2) {
   background-image: repeating-linear-gradient(
     to right,
-    var(--color-text-tertiary) 0 5px,
+    var(--color-bg-divider-secondary) 0 5px,
     transparent 5px 10px
   );
   background-position: 10px 0; /* shifted */
@@ -397,7 +440,7 @@ body {
 .section-divider .line:nth-child(3) {
   background-image: repeating-linear-gradient(
     to right,
-    var(--color-text-secondary) 0 5px,
+    var(--color-bg-divider-primary) 0 5px,
     transparent 5px 10px
   );
   background-position: 4px 0; /* more shifted */
@@ -406,7 +449,7 @@ body {
 .section-divider .line:nth-child(4) {
   background-image: repeating-linear-gradient(
     to right,
-    var(--color-text-tertiary) 0 5px,
+    var(--color-bg-divider-secondary) 0 5px,
     transparent 5px 10px
   );
   background-position: 13px 0; /* even more shifted */
@@ -417,17 +460,17 @@ body {
   display: flex;
   flex-direction: column;
   margin: 3rem 0;
-  gap: 4px;
+  gap: 5px;
 }
 
 .section-divider-alt .line {
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-size: 15px 10px;
   background-repeat: repeat-x;
   background-image: repeating-linear-gradient(
     to right,
-    var(--color-text-quaternary) 0 5px,
+    var(--color-bg-divider-tertiary) 0 5px,
     transparent 5px 10px
   );
 }
