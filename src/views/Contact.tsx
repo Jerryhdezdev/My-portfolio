@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
+//import { useTheme } from "../components/ThemeContext";
 
-interface ExperienceProps {
-  theme: "light" | "dark";
-}
 
-export function Contact({ theme }: ExperienceProps) {
+
+export function Contact() {
   const { t } = useTranslation();
 
   return (

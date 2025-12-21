@@ -1,19 +1,16 @@
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../components/ThemeContext";
 import { Tooltip } from "../components/Tooltip";
 import { SectionDivider } from "../components/SectionDivider";
 import { RetroButton } from "../components/RetroButton";
 import profileLight from "../assets/images/profileLight.webp";
 import profileDark from "../assets/images/profileDark.webp";
-import profileLightMobile from "../assets/images/profileLightMobile.webp";
-import profileDarkMobile from "../assets/images/profileDarkMobile.webp";
 import GitHubIcon from "../assets/icons/heroGithub.svg?react";
 import LinkedInIcon from "../assets/icons/heroLinkedin.svg?react";
 
-interface HomeProps {
-  theme: "light" | "dark";
-}
-
-export function Home({ theme }: HomeProps) {
+export function Home() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const { t } = useTranslation();
 
   return (
@@ -95,18 +92,18 @@ export function Home({ theme }: HomeProps) {
         </div>
 
         {/* Profile image */}
-        <picture className="order-2 block">
+        <picture className="order-2 block scale-interactive">
           {/* Desktop image */}
           <source
             media="(min-width: 768px)"
-            srcSet={theme === "dark" ? profileDark : profileLight}
+            srcSet={isDark ? profileDark : profileLight}
             type="image/webp"
           />
 
           {/* Mobile image */}
           <source
             media="(max-width: 767px)"
-            srcSet={theme === "dark" ? profileDarkMobile : profileLightMobile}
+            srcSet={isDark ? profileDark : profileLight}
             type="image/webp"
           />
 

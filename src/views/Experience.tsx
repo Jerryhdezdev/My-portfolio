@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../components/ThemeContext";
 import { SectionDivider } from "../components/SectionDivider";
 import { experienceData } from "../data/experienceData";
 
-interface ExperienceProps {
-  theme: "light" | "dark";
-}
 
-export function Experience({ theme }: ExperienceProps) {
+
+export function Experience() {
+  const { theme } = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -23,8 +23,8 @@ export function Experience({ theme }: ExperienceProps) {
       >
         {t("sections.experience.title", "Experience")}
       </h1>
-      <h2 className="text-4xl lg:text-6xl text-(--color-text-secondary) big-outline mb-14 font-bold starburst-pop">
-        {t("sections.experience.subtitle", "Hello...")}
+      <h2 className="text-4xl lg:text-6xl text-(--color-text-secondary) big-outline mb-20 font-bold starburst-pop">
+        {t("sections.experience.subtitle", "Things I’ve crafted")}
       </h2>
 
       {/* Timeline wrapper */}
@@ -72,7 +72,7 @@ export function Experience({ theme }: ExperienceProps) {
                   <img
                     src={item.images[theme]}
                     alt={t("sections.experience.imageAlt")}
-                    className="absolute -right-5 -top-12 w-20 h-auto rubber-hose"
+                    className="absolute -right-5 -top-12 w-20 h-auto lg:w-30 lg:-right-22 lg:-top-20 rubber-hose"
                     draggable="false"
                     loading="lazy"
                   />

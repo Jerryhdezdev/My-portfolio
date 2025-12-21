@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { SEO } from "./components/SEO";
@@ -10,49 +9,40 @@ import { Experience } from "./views/Experience";
 import { Technologies } from "./views/Technologies";
 import { Projects } from "./views/Projects";
 import { Contact } from "./views/Contact";
+import { ThemeProvider } from "./components/ThemeContext";
 
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">(
-    (localStorage.getItem("theme") as "light" | "dark") || "light"
-  );
-
-  const toggleTheme = () => {
-    document.documentElement.classList.add("theme-transition");
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-    setTimeout(() => {
-      document.documentElement.classList.remove("theme-transition");
-    }, 350);
-  };
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <SEO />
+    <ThemeProvider>
+      <div className="min-h-screen flex flex-col">
+        <SEO />
 
-      {/* Pass theme and toggleTheme here */}
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+        {/* Navbar consumes theme from context */}
+        <Navbar />
 
-      <main className="pt-20 flex-1 w-full" role="main">
-        <div className="w-full max-w-[1400px] mx-auto px-6 ">
-          <Home theme={theme} />
-          <About theme={theme} />
-          <Experience theme={theme}/>
-          <Technologies theme={theme}/>
-          <Projects theme={theme}/>
-          <Contact theme={theme}/>
-        </div>
-      </main>
+        <main className="pt-20 flex-1 w-full" role="main">
+          <div className="w-full max-w-[1400px] mx-auto px-6">
+            <Home />
+            <About />
+            <Experience />
+            <Technologies />
+            <Projects />
+            <Contact />
+          </div>
+        </main>
 
-      <Footer />
+        <Footer />
 
-      <ToastContainer
-        toastClassName="custom-toast"
-        progressClassName="custom-progress-bar"
-        position="top-right"
-        autoClose={1000}
-        hideProgressBar={false}
-        closeOnClick
-      />
-    </div>
+        <ToastContainer
+          toastClassName="custom-toast"
+          progressClassName="custom-progress-bar"
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          closeOnClick
+        />
+      </div>
+    </ThemeProvider>
   );
 }
 

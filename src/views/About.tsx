@@ -1,16 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { SectionDivider } from "../components/SectionDivider";
 import aboutMeLight from "../assets/images/aboutMeLight.webp";
-import aboutMeLightMobile from "../assets/images/aboutMeLightMobile.webp";
 import aboutMeDark from "../assets/images/aboutMeDark.webp";
-import aboutMeDarkMobile from "../assets/images/aboutMeDarkMobile.webp";
+import { useTheme } from "../components/ThemeContext";
 
-interface AboutProps {
-  theme: "light" | "dark";
-}
 
-export function About({ theme }: AboutProps) {
+export function About() {
+  const {theme} =useTheme();
   const { t } = useTranslation();
+  const isDark =theme === "dark";
   const description = t("sections.about.description", {
     returnObjects: true,
   }) as string[];
@@ -49,15 +47,15 @@ export function About({ theme }: AboutProps) {
         </div>
 
         {/* Image */}
-        <picture className="order-2 md:order-1 flex justify-center">
+        <picture className="order-2 md:order-1 flex justify-center scale-interactive">
           <source
             media="(min-width: 768px)"
-            srcSet={theme === "dark" ? aboutMeDark : aboutMeLight}
+            srcSet={isDark ? aboutMeDark : aboutMeLight}
             type="image/webp"
           />
           <source
             media="(max-width: 767px)"
-            srcSet={theme === "dark" ? aboutMeDarkMobile : aboutMeLightMobile}
+            srcSet={isDark ? aboutMeDark : aboutMeLight}
             type="image/webp"
           />
           <img

@@ -87,7 +87,12 @@
       ]
     },
     "technologies": {
-      "title": "Technologies"
+      "title": "Technologies",
+      "titleComplement": "que j’ai utilisées",
+      "tools": "Outils",
+      "frontendAlt": "Icône de la section frontend",
+      "backendAlt": "Icône de la section backend",
+      "toolsAlt": "Icône de la section des outils"
     },
     "projects": {
       "title": "Projets"

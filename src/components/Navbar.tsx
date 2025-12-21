@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ThemeToggleButton } from "./ThemeToggleButton";
 
-interface NavbarProps {
-  theme: "light" | "dark";
-  toggleTheme: () => void;
-}
 
-export function Navbar({ theme, toggleTheme }: NavbarProps) {
+
+export function Navbar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -38,10 +35,6 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
     document.documentElement.classList.add("theme-ready");
   }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   // Scroll effects
   useEffect(() => {
@@ -229,10 +222,10 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
         </nav>
 
         {/* Desktop languages + theme */}
-        <div className="hidden md:flex items-center gap-3">
-          {renderLanguages()}
-          <ThemeToggleButton theme={theme} toggleTheme={toggleTheme} />
-        </div>
+<div className="hidden md:flex items-center gap-3">
+  {renderLanguages()}
+  <ThemeToggleButton />
+</div>
 
         {/* Mobile menu toggle */}
         <div className="relative flex flex-col  items-center ">
@@ -279,7 +272,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
             {renderMenuItems(true)}
             <div className="flex justify-center space-x-4 pt-6 border-t border-gray-200">
               {renderLanguages(true)}
-              <ThemeToggleButton theme={theme} toggleTheme={toggleTheme} />
+              <ThemeToggleButton />
             </div>
           </div>
         </div>

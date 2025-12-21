@@ -1,7 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "../components/ThemeContext";
 import { SectionDivider } from "../components/SectionDivider";
+import FrontendLight from "../assets/images/frontendLight.webp";
+import FrontendDark from "../assets/images/frontendDark.webp";
+import BackendLight from "../assets/images/backendLight.webp";
+import BackendDark from "../assets/images/backendDark.webp";
+import ToolsLight from "../assets/images/toolsLight.webp";
+import ToolsDark from "../assets/images/toolsDark.webp";
 import ReactIcon from "../assets/icons/react.svg?react";
 import Tailwind from "../assets/icons/tailwind.svg?react";
 import JavaScript from "../assets/icons/javascript.svg?react";
@@ -14,11 +21,6 @@ import GIT from "../assets/icons/git.svg?react";
 import Docker from "../assets/icons/docker.svg?react";
 import Postman from "../assets/icons/postman.svg?react";
 import Vite from "../assets/icons/vite.svg?react";
-
-/** Theme-related props used to switch between light and dark mode */
-interface ExperienceProps {
-  theme: "light" | "dark";
-}
 
 /** Base model representing a technology with its display name and icon */
 interface TechItem {
@@ -55,7 +57,7 @@ const toolsTech: TechItem[] = [
   { name: "Vite", Icon: Vite },
 ];
 
-/* COMPONENTS */
+/* Components */
 
 const VintageCard = ({
   name,
@@ -71,19 +73,30 @@ const VintageCard = ({
       bounceStiffness: 600,
       bounceDamping: 20,
     }}
-    transition={{
-      y: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: index * 0.2,
-      },
-      rotate: {
-        type: "spring",
-        stiffness: 180,
-        damping: 18,
-      },
+
+    /* Floating idle animation */
+    animate={{
+      y: [0, -6, 0],
+      rotate: [-0.6, 0.6, -0.6],
     }}
+    transition={{
+      duration: 4 + index * 0.3,
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeInOut",
+    }}
+
+    /* Interaction feedback */
+whileHover={{
+  scale: 1.05,
+  y: -2,
+  boxShadow: "8px 8px 0px rgba(0,0,0,1)",
+}}
+    whileTap={{
+      scale: 1.08,
+      cursor: "grabbing",
+    }}
+
     className="
       w-32 h-40 md:w-36 md:h-44
       p-2
@@ -95,6 +108,7 @@ const VintageCard = ({
       rounded-xl
       cursor-grab
       active:cursor-grabbing
+      select-none
     "
   >
     {/* Icon area */}
@@ -117,8 +131,9 @@ const VintageCard = ({
 );
 
 /* Main Section */
-export function Technologies({ theme }: ExperienceProps) {
+export function Technologies() {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const frontendRef = useRef<HTMLDivElement>(null);
   const backendRef = useRef<HTMLDivElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
@@ -134,7 +149,7 @@ export function Technologies({ theme }: ExperienceProps) {
         id="technologies-heading"
         tabIndex={-1}
         className="
-          w-full text-center mb-16
+          w-full text-center
           font-extrabold
           text-[45px] md:text-5xl lg:text-8xl
           text-(--color-text-primary)
@@ -142,38 +157,59 @@ export function Technologies({ theme }: ExperienceProps) {
       >
         {t("sections.technologies.title", "Technologies")}
       </h1>
+      {/* Title complement*/}
+      <h2 className="text-4xl lg:text-6xl text-(--color-text-secondary) big-outline mb-20 font-bold starburst-pop">
+        {t("sections.technologies.titleComplement", "I’ve been working with")}
+      </h2>
 
-      {/* Frontend section*/}
-      <div className="w-full flex flex-col items-start mb-5">
-        <h2 className="text-4xl lg:text-6xl text-(--color-text-secondary) big-outline mb-10 font-bold starburst-pop">
-          {t("sections.technologies.frontend", "Frontend")}
-        </h2>
-
-        <div
-          ref={frontendRef}
-          className="flex flex-wrap gap-8 tech-frontend justify-start"
-        >
-          {frontendTech.map((tech, index) => (
-            <VintageCard
-              key={tech.name}
-              index={index}
-              constraintsRef={frontendRef}
-              {...tech}
+      {/* Frontend section */}
+      <div className="w-full flex justify-center mb-5">
+        <div className="flex flex-col items-start">
+          <h2 className="flex items-center gap-4 text-4xl lg:text-6xl text-(--color-text-tertiary) big-outline mb-1 font-bold">
+            Frontend
+            <img
+              src={theme === "dark" ? FrontendDark : FrontendLight}
+              alt={t(
+                "sections.technologies.frontendAlt",
+                "Frontend technologies icon"
+              )}
+              className="w-26 h-31 lg:w-34 lg:h-39  scale-interactive"
             />
-          ))}
-        </div>
-      </div>
-
-      {/* Backend section*/}
-      <div className="w-full flex justify-end mb-5">
-        <div className="flex flex-col items-center md:items-start">
-          <h2 className="text-4xl lg:text-6xl text-(--color-text-secondary) big-outline mb-10 font-bold starburst-pop">
-            {t("sections.technologies.backend", "Backend")}
           </h2>
 
           <div
+            ref={frontendRef}
+            className="flex flex-wrap gap-8 tech-frontend justify-start"
+          >
+            {frontendTech.map((tech, index) => (
+              <VintageCard
+                key={tech.name}
+                index={index}
+                constraintsRef={frontendRef}
+                {...tech}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Backend section */}
+      <div className="w-full flex justify-center mb-5">
+        <div className="flex flex-col items-start">
+          <h2 className="flex items-center gap-4 text-4xl lg:text-6xl text-(--color-text-tertiary) big-outline mb-1 font-bold">
+            Backend
+            <img
+              src={theme === "dark" ? BackendDark : BackendLight}
+              alt={t(
+                "sections.technologies.backendAlt",
+                "Backend technologies icon"
+              )}
+              className="w-30 h-32 lg:w-38 lg:h-40  scale-interactive"
+            />
+          </h2>
+          <div
             ref={backendRef}
-            className="flex flex-wrap gap-8 justify-end tech-backend"
+            className="flex flex-wrap gap-8 tech-backend justify-start"
           >
             {backendTech.map((tech, index) => (
               <VintageCard
@@ -188,23 +224,32 @@ export function Technologies({ theme }: ExperienceProps) {
       </div>
 
       {/* Tools section */}
-      <div className="w-full flex flex-col items-start">
-        <h2 className="text-4xl lg:text-6xl text-(--color-text-secondary) big-outline mb-10 font-bold starburst-pop">
-          {t("sections.technologies.tools", "Tools")}
-        </h2>
-
-        <div
-          ref={toolsRef}
-          className="flex flex-wrap gap-8 justify-start tech-tools mb-15"
-        >
-          {toolsTech.map((tech, index) => (
-            <VintageCard
-              key={tech.name}
-              index={index}
-              constraintsRef={toolsRef}
-              {...tech}
+      <div className="w-full flex justify-center mb-5">
+        <div className="flex flex-col items-start">
+          <h2 className="flex items-center gap-4 text-4xl lg:text-6xl text-(--color-text-tertiary) big-outline mb-1 font-bold">
+            {t("sections.technologies.tools", "Tools")}
+            <img
+              src={theme === "dark" ? ToolsDark : ToolsLight}
+              alt={t(
+                "sections.technologies.toolsAlt",
+                "Tools technologies icon"
+              )}
+              className="w-26 h-30 lg:w-36 lg:h-40 ml-8 lg:ml-15 scale-interactive"
             />
-          ))}
+          </h2>
+          <div
+            ref={toolsRef}
+            className="flex flex-wrap gap-8 justify-start tech-tools"
+          >
+            {toolsTech.map((tech, index) => (
+              <VintageCard
+                key={tech.name}
+                index={index}
+                constraintsRef={toolsRef}
+                {...tech}
+              />
+            ))}
+          </div>
         </div>
       </div>
 

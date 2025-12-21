@@ -89,7 +89,12 @@
       ]
     },
     "technologies": {
-      "title": "Technologies"
+      "title": "Technologies",
+      "titleComplement":"I’ve been working with",
+      "tools":"Tools",
+      "frontendAlt":"Frontend technologies icon",
+      "backendAlt":"backend technologies icon",
+      "toolsAlt":"tools icon"
     },
     "projects": {
       "title": "Projects"

@@ -161,8 +161,9 @@ export function Footer() {
               type="button"
               id="lang"
               aria-haspopup="listbox"
+              aria-expanded={open ? "true" : "false"} // eslint-disable-line jsx-a11y/aria-proptypes
               aria-controls="language-listbox"
-              aria-expanded={open ? "true" : "false"} // string used to satisfy static a11y analyzers
+              aria-label="Change language"
               onClick={() => setOpen((prev) => !prev)}
               onKeyDown={(e) => {
                 if (!open && (e.key === "ArrowDown" || e.key === "ArrowUp")) {

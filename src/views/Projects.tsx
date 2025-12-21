@@ -1,11 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { SectionDivider } from "../components/SectionDivider";
 
-interface ExperienceProps {
-  theme: "light" | "dark";
-}
 
-export function Projects({ theme }: ExperienceProps) {
+export function Projects() {
   const { t } = useTranslation();
 
   return (
