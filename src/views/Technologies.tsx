@@ -73,30 +73,18 @@ const VintageCard = ({
       bounceStiffness: 600,
       bounceDamping: 20,
     }}
-
     /* Floating idle animation */
-    animate={{
-      y: [0, -6, 0],
-      rotate: [-0.6, 0.6, -0.6],
-    }}
-    transition={{
-      duration: 4 + index * 0.3,
-      repeat: Infinity,
-      repeatType: "mirror",
-      ease: "easeInOut",
-    }}
+  animate={{
+    y: [0, -6, 0],
+    rotate: [-0.6, 0.6, -0.6],
+  }}
 
-    /* Interaction feedback */
-whileHover={{
-  scale: 1.05,
-  y: -2,
-  boxShadow: "8px 8px 0px rgba(0,0,0,1)",
-}}
-    whileTap={{
-      scale: 1.08,
-      cursor: "grabbing",
-    }}
-
+  transition={{
+    duration: 4 + index * 0.3,
+    repeat: Infinity,
+    repeatType: "mirror",
+    ease: "easeInOut",
+  }}
     className="
       w-32 h-40 md:w-36 md:h-44
       p-2
@@ -104,7 +92,7 @@ whileHover={{
       bg-(--color-bg-tech-card-primary)
       text-black
       border-[3px] border-black
-      shadow-(--retro-shadow)
+      shadow-(--retro-shadow-tech)
       rounded-xl
       cursor-grab
       active:cursor-grabbing
@@ -151,7 +139,7 @@ export function Technologies() {
         className="
           w-full text-center
           font-extrabold
-          text-[45px] md:text-5xl lg:text-8xl
+          text-6xl lg:text-8xl
           text-(--color-text-primary)
         "
       >
@@ -179,7 +167,12 @@ export function Technologies() {
 
           <div
             ref={frontendRef}
-            className="flex flex-wrap gap-8 tech-frontend justify-start"
+            className="
+  grid grid-cols-2 gap-6 place-items-center
+  md:flex md:flex-wrap md:gap-8 md:place-items-start
+  justify-start
+  tech-frontend
+  "
           >
             {frontendTech.map((tech, index) => (
               <VintageCard
@@ -209,7 +202,10 @@ export function Technologies() {
           </h2>
           <div
             ref={backendRef}
-            className="flex flex-wrap gap-8 tech-backend justify-start"
+            className="
+  grid grid-cols-2 gap-6 place-items-center
+  md:flex md:flex-wrap md:gap-8 md:place-items-start
+  justify-start tech-backend"
           >
             {backendTech.map((tech, index) => (
               <VintageCard
@@ -234,12 +230,15 @@ export function Technologies() {
                 "sections.technologies.toolsAlt",
                 "Tools technologies icon"
               )}
-              className="w-26 h-30 lg:w-36 lg:h-40 ml-8 lg:ml-15 scale-interactive"
+              className="w-26 h-30 lg:w-36 lg:h-40 scale-interactive"
             />
           </h2>
           <div
             ref={toolsRef}
-            className="flex flex-wrap gap-8 justify-start tech-tools"
+            className="
+  grid grid-cols-2 gap-6 place-items-center
+  md:flex md:flex-wrap md:gap-8 md:place-items-start
+  justify-start tech-tools"
           >
             {toolsTech.map((tech, index) => (
               <VintageCard

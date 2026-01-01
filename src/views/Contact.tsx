@@ -16,7 +16,7 @@ export function Contact() {
       <h1
         id="contact-heading"
         tabIndex={-1}
-        className="w-full text-center text-(--color-text-primary) mb-8 font-extrabold text-[45px] md:text-5xl lg:text-8xl"
+        className="w-full text-center text-(--color-text-primary) mb-8 font-extrabold text-6xl lg:text-8xl"
       >
         {t("sections.contact.title", "Contact")}
       </h1>

@@ -90,14 +90,27 @@
     },
     "technologies": {
       "title": "Technologies",
-      "titleComplement":"I’ve been working with",
-      "tools":"Tools",
-      "frontendAlt":"Frontend technologies icon",
-      "backendAlt":"backend technologies icon",
-      "toolsAlt":"tools icon"
+      "titleComplement": "I’ve been working with",
+      "tools": "Tools",
+      "frontendAlt": "Frontend technologies icon",
+      "backendAlt": "backend technologies icon",
+      "toolsAlt": "tools icon"
     },
     "projects": {
-      "title": "Projects"
+      "title": "Projects",
+      "imageAlt": "Decorative cartoon for experience section",
+      "items": [
+        {
+          "title": "Personal Portfolio",
+          "description": "This project serves as both my portfolio and a practical exercise in building a structured, accessible single-page application (SPA), blending clean code organization with a cartoon-inspired, retro visual style."
+        },
+        {
+          "title": "Animal Shelter MVP (Web)",
+          "description": "A web-based MVP created to help an animal shelter increase adoption opportunities through a clear, accessible, and user-friendly interface, with a structure prepared for future scalability."
+        }
+      ],
+      "tooltipGitHub": "View repository",
+      "tooltipLiveDemo": "Check out the live demo"
     },
     "contact": {
       "title": "Contact Me"

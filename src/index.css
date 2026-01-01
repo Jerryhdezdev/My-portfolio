@@ -58,25 +58,44 @@ h2:focus-visible {
   --color-bg-card-secondary: #deaa79;
   --color-text-card-secondary: #335c67;
 
+  /* technologies color palette projects section*/
+  --color-bg-tech-project-primary:#5a9ca5e0;
+  --color-bg-tech-project-secondary:#9caa53ab;
+  --color-bg-tech-project-tertiary:#e26866de;
+  --color-bg-tech-project-quaternary:#e0b855dc;
+  --color-bg-tech-project-quinary:#b6a2a1;
+  --color-bg-tech-project-senary:#a7a84fe3;
+
+  /*Github and Live Demo bg color projects section*/
+  --color-bg-button-github:#c59ba3fb;
+  --color-bg-button-liveDemo:#e79339d7;
+
+  /* Filmtape*/
+  --color-filtape: #0f0f0f;
+  --color-filmrails: #f7f7f7;
+
   /* retro cartoon button shadow */
   --retro-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  
+  /*shadow tech cards*/
+  --retro-shadow-tech: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 }
 
-  /* override bg Techcard color icon area light mode*/
-  .tech-frontend {
-    --color-bg-tech-card-secondary: #509099;
-  }
+/* override bg Techcard color icon area light mode*/
+.tech-frontend {
+  --color-bg-tech-card-secondary: #509099;
+}
 
-  .tech-backend {
-    --color-bg-tech-card-secondary: #e7917e98;
-  }
+.tech-backend {
+  --color-bg-tech-card-secondary: #e7917e98;
+}
 
-  .tech-tools {
-    --color-bg-tech-card-secondary: #9caa53ab;
-  }
+.tech-tools {
+  --color-bg-tech-card-secondary: #9caa53ab;
+}
 
 /* Dark Mode palette */
-.dark  {
+.dark {
   --color-text-navbar: #fdfdfd;
   --color-text-primary: #e6e6e6;
   --color-text-secondary: #ffb84d;
@@ -98,7 +117,6 @@ h2:focus-visible {
   --color-bg-tech-card-primary: #aaaa77e3;
   --color-bg-tech-card-secondary: #63b8b2b6;
 
-
   /* Card color palette*/
   --color-shadow-card-primary: #3b3b3b;
   --color-bg-card-primary: #659287;
@@ -106,8 +124,27 @@ h2:focus-visible {
   --color-bg-card-secondary: #1f3a44;
   --color-text-card-secondary: #f0dfc9;
 
+  /* technologies color palette projects section*/
+  --color-bg-tech-project-primary:#3e5e63;
+  --color-bg-tech-project-secondary:#758136ab;
+  --color-bg-tech-project-tertiary:#a14241de;
+  --color-bg-tech-project-quaternary:#b1944adc;
+  --color-bg-tech-project-quinary:#926f6d;
+  --color-bg-tech-project-senary:#797a3ee3;
+
+  /*Github and Live Demo bg color projects section*/
+  --color-bg-button-github:#a37a82fb;
+  --color-bg-button-liveDemo:#be7b33d7;
+
+  /* Filmtape*/
+  --color-filtape: #1d1c1c;
+  --color-filmrails: #d6d6d6;
+
   /* retro cartoon button shadow */
   --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
+    /*shadow tech cards*/
+  --retro-shadow-tech: 4px 4px 0px 0px rgba(59, 59, 59, 0.8);
+
 }
 
 /* override bg TechCard color icon area dark mode*/
@@ -134,17 +171,26 @@ h2:focus-visible {
   color: var(--color-text-card-secondary);
 }
 
-.card-tertiary {
-  background-color: var(--color-bg-card-tertiary);
+/* classes that use color variable for bg tech in projects section */
+.tech-projects-primary{
+  background-color: var(--color-bg-tech-project-primary);
+}
+.tech-projects-secondary{
+  background-color: var(--color-bg-tech-project-secondary);
+}
+.tech-projects-tertiary{
+  background-color: var(--color-bg-tech-project-tertiary);
+}
+.tech-projects-quaternary{
+  background-color: var(--color-bg-tech-project-quaternary);
+}
+.tech-projects-quinary{
+  background-color: var(--color-bg-tech-project-quinary);
+}
+.tech-projects-senary{
+  background-color: var(--color-bg-tech-project-senary);
 }
 
-.card-quaternary {
-  background-color: var(--color-bg-card-quaternary);
-}
-
-.card-fifth {
-  background-color: var(--color-bg-card-fifth);
-}
 
 /* Font family */
 @font-face {
@@ -401,6 +447,44 @@ body {
 
 .starburst-pop {
   animation: starburstPop 1s ease-out;
+}
+
+/* Film animation */
+@keyframes film {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-912px);
+  } /* 6 slots x 152px each */
+}
+
+.animate-film {
+  animation: film 18s linear infinite;
+  will-change: transform;
+}
+.top-rail {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(240, 236, 236) 0 12px,
+    rgb(24, 24, 24) 12px 24px
+  );
+}
+
+.bottom-rail {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(245, 242, 242) 0 12px,
+    rgb(24, 24, 24) 12px 24px
+  );
+}
+
+.animation-paused {
+  animation-play-state: paused;
+}
+
+.animation-running {
+  animation-play-state: running;
 }
 
 /* Left: 4-line dashed section divider (alternating colors) */

@@ -25,7 +25,7 @@ export function Home() {
           <h1
             id="home-heading"
             tabIndex={-1}
-            className="text-[45px] md:text-5xl lg:text-8xl font-extrabold text-(--color-text-primary)"
+            className="text-6xl lg:text-8xl font-extrabold text-(--color-text-primary)"
           >
             {t("sections.home.introStart")}{" "}
             <span className="text-(--color-text-secondary) font-normal big-outline starburst-pop inline-block">

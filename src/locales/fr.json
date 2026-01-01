@@ -95,7 +95,20 @@
       "toolsAlt": "Icône de la section des outils"
     },
     "projects": {
-      "title": "Projets"
+      "title": "Projets",
+      "imageAlt": "Illustration cartoon décorative pour la section des projets",
+      "items": [
+        {
+          "title": "Portfolio Personnel",
+          "description": "Ce projet fonctionne à la fois comme mon portfolio et comme un exercice pratique pour la création d’une application web monopage (SPA) structurée et accessible, combinant une organisation de code propre avec un style visuel rétro inspiré du cartoon."
+        },
+        {
+          "title": "Refuge Animalier MVP (Web)",
+          "description": "Une application web MVP conçue pour aider un refuge animalier à augmenter les opportunités d’adoption grâce à une interface claire, accessible et conviviale, avec une structure préparée pour une évolutivité future."
+        }
+      ],
+      "tooltipGitHub": "Voir le dépôt",
+      "tooltipLiveDemo": "Voir la démo en ligne"
     },
     "contact": {
       "title": "Me contacter"

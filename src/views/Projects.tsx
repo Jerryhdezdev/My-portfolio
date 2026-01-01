@@ -1,26 +1,53 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../components/ThemeContext";
 import { SectionDivider } from "../components/SectionDivider";
-
+import { projects } from "../data/projects";
+import { FilmTape } from "../projects/FilmTape";
+import { Projector } from "../projects/Projector";
+import { ProjectReview } from "../projects/ProjectReview";
 
 export function Projects() {
+  const { theme } = useTheme();
   const { t } = useTranslation();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const currentProject = projects[currentIndex];
+
+  //Defensive guard (prevents runtime crashes)
+  if (!currentProject) {
+    return null;
+  }
+
+  const currentImage =
+    theme === "dark"
+      ? currentProject.images.dark
+      : currentProject.images.light;
 
   return (
-    <section
-      id="projects"
-      aria-labelledby="projects-heading"
-      className="scroll-mt-20 px-6 py-16 min-h-screen flex flex-col justify-center items-center"
-    >
-      {/* Section title */}
-      <h1
-        id="projects-heading"
-        tabIndex={-1}
-        className="w-full text-center text-(--color-text-primary) mb-8 font-extrabold text-[45px] md:text-5xl lg:text-8xl"
-      >
+    <section id="projects" className="scroll-mt-20 px-6 py-16 min-h-screen">
+      <h1 className="text-6xl lg:text-8xl font-extrabold text-(--color-text-primary) mb-10">
         {t("sections.projects.title", "Projects")}
       </h1>
 
-      {/* Divider */}
+      <div className="flex flex-col lg:flex-row gap-10 items-center">
+        <div className="w-full lg:w-1/2">
+          <ProjectReview project={currentProject} />
+        </div>
+
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <Projector imageSrc={currentImage} />
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <FilmTape
+          projects={projects}
+          currentIndex={currentIndex}
+          onSelect={setCurrentIndex}
+        />
+      </div>
+
       <div className="w-full mt-16">
         <SectionDivider
           className="justify-start md:justify-start gap-10 md:gap-20"
