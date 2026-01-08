@@ -4,11 +4,10 @@ import aboutMeLight from "../assets/images/aboutMeLight.webp";
 import aboutMeDark from "../assets/images/aboutMeDark.webp";
 import { useTheme } from "../components/ThemeContext";
 
-
 export function About() {
-  const {theme} =useTheme();
+  const { theme } = useTheme();
   const { t } = useTranslation();
-  const isDark =theme === "dark";
+  const isDark = theme === "dark";
   const description = t("sections.about.description", {
     returnObjects: true,
   }) as string[];
@@ -17,7 +16,7 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-20 px-6 py-10 min-h-screen flex flex-col justify-center items-center md:items-start"
+      className="scroll-mt-20 px-6 py-[5vh] min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center md:items-start"
     >
       {/* Section title*/}
       <h1

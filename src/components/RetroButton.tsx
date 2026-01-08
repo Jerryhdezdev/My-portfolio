@@ -1,17 +1,33 @@
+/* eslint-disable jsx-a11y/aria-proptypes */
+import React from "react";
+
 interface RetroButtonProps {
-  text: string;
+  children?: React.ReactNode;
+  text?: string;
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
+  disabled?: boolean;
+  isLoading?: boolean;
   className?: string;
 }
 
 export function RetroButton({
-  text,
+  children,
+  type = "button",
   onClick,
+  disabled = false,
+  isLoading = false,
   className = "",
 }: RetroButtonProps) {
+  const isDisabled = disabled || isLoading;
+
   return (
     <button
+      type={type}
       onClick={onClick}
+      disabled={isDisabled}
+      aria-disabled={isDisabled ? "true" : "false"}
+      aria-busy={isLoading ? "true" : "false"}
       className={`
         relative inline-block px-6 py-3
         font-bold uppercase tracking-wide
@@ -33,10 +49,12 @@ export function RetroButton({
         focus-visible:ring-offset-2
         focus-visible:ring-offset-(--color-bg-navbarAndFooter)
 
+        disabled:opacity-50 disabled:cursor-not-allowed
+
         ${className}
       `}
     >
-      {text}
+      {children}
     </button>
   );
 }

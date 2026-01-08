@@ -1,0 +1,245 @@
+/* Smooth transition on theme change */
+html.theme-transition {
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Londrina", Arial, sans-serif;
+}
+
+html:not(.theme-ready) * {
+  transition: none !important;
+}
+
+/* Light Mode palette */
+:root {
+  --color-text-navbar: #ffffff;
+  --color-text-primary: #102217;
+  --color-text-secondary: #d2ae4d;
+  --color-text-tertiary: #b24449;
+  --color-text-button: #ffffff;
+
+  --color-hover-text-navbarAndFooter: #d2ad4b;
+
+  --color-bg-navbarAndFooter: #336fa3;
+  --color-bg-button: #336fa3;
+  --color-bg-body: #f1f0ec;
+  --color-bg-form: #e9eccf;
+
+  /* bg divider color */
+  --color-bg-divider-primary: #d2ae4d;
+  --color-bg-divider-secondary: #b24449;
+  --color-bg-divider-tertiary: #00915d;
+
+  /* bg Techcard color*/
+  --color-bg-tech-card-primary: #d2cec2;
+  --color-bg-tech-card-secondary: #63b8b2b6;
+
+  /* Card color palette*/
+  --color-shadow-card-primary: #121212;
+  --color-bg-card-primary: #c8d69b;
+  --color-text-card-primary: #3971b8;
+  --color-bg-card-secondary: #deaa79;
+  --color-text-card-secondary: #335c67;
+
+  /* technologies color palette projects section*/
+  --color-bg-tech-project-primary: #5a9ca5e0;
+  --color-bg-tech-project-secondary: #9caa53ab;
+  --color-bg-tech-project-tertiary: #e26866de;
+  --color-bg-tech-project-quaternary: #e0b855dc;
+  --color-bg-tech-project-quinary: #b6a2a1;
+  --color-bg-tech-project-senary: #a7a84fe3;
+
+  /*Github and Live Demo bg color projects section*/
+  --color-bg-button-github: #c59ba3fb;
+  --color-bg-button-liveDemo: #e79339d7;
+
+  /* Filmtape*/
+  --color-filtape: #0f0f0f;
+  --color-filmrails: #f7f7f7;
+
+  /* retro cartoon button shadow */
+  --retro-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+
+  /*shadow tech cards*/
+  --retro-shadow-tech: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* override bg Techcard color icon area light mode*/
+.tech-frontend {
+  --color-bg-tech-card-secondary: #509099;
+}
+
+.tech-backend {
+  --color-bg-tech-card-secondary: #e7917e98;
+}
+
+.tech-tools {
+  --color-bg-tech-card-secondary: #9caa53ab;
+}
+
+/* Dark Mode palette */
+.dark {
+  --color-text-navbar: #fdfdfd;
+  --color-text-primary: #e6e6e6;
+  --color-text-secondary: #ffb84d;
+  --color-text-tertiary: #c76d70;
+  --color-text-button: #2e2e2e;
+
+  --color-hover-text-navbarAndFooter: #ffb84d;
+
+  --color-bg-navbarAndFooter: #1f3a56;
+  --color-bg-button: #ffb84d;
+  --color-bg-body: #0d1117;
+  --color-bg-form: #abad9c;
+
+  /* bg divider color */
+  --color-bg-divider-primary: #8a7232;
+  --color-bg-divider-secondary: #8f3b3f;
+  --color-bg-divider-tertiary: #066844;
+
+  /* bg Techcard color*/
+  --color-bg-tech-card-primary: #aaaa77e3;
+  --color-bg-tech-card-secondary: #63b8b2b6;
+
+  /* Card color palette*/
+  --color-shadow-card-primary: #3b3b3b;
+  --color-bg-card-primary: #659287;
+  --color-text-card-primary: #c8d69b;
+  --color-bg-card-secondary: #1f3a44;
+  --color-text-card-secondary: #f0dfc9;
+
+  /* technologies color palette projects section*/
+  --color-bg-tech-project-primary: #3e5e63;
+  --color-bg-tech-project-secondary: #758136ab;
+  --color-bg-tech-project-tertiary: #a14241de;
+  --color-bg-tech-project-quaternary: #b1944adc;
+  --color-bg-tech-project-quinary: #926f6d;
+  --color-bg-tech-project-senary: #797a3ee3;
+
+  /*Github and Live Demo bg color projects section*/
+  --color-bg-button-github: #a37a82fb;
+  --color-bg-button-liveDemo: #be7b33d7;
+
+  /* Filmtape*/
+  --color-filtape: #1d1c1c;
+  --color-filmrails: #d6d6d6;
+
+  /* retro cartoon button shadow */
+  --retro-shadow: 4px 4px 0px 0px rgba(255, 184, 77, 0.35);
+  /*shadow tech cards*/
+  --retro-shadow-tech: 4px 4px 0px 0px rgba(59, 59, 59, 0.8);
+}
+
+/* override bg TechCard color icon area dark mode*/
+.dark .tech-frontend {
+  --color-bg-tech-card-secondary: #335f64a4;
+}
+
+.dark .tech-backend {
+  --color-bg-tech-card-secondary: #7e4a4085;
+}
+
+.dark .tech-tools {
+  --color-bg-tech-card-secondary: #596629b0;
+}
+
+/* classes that use color variable for bg cards */
+.card-primary {
+  background-color: var(--color-bg-card-primary);
+  color: var(--color-text-card-primary);
+}
+
+.card-secondary {
+  background-color: var(--color-bg-card-secondary);
+  color: var(--color-text-card-secondary);
+}
+
+/* classes that use color variable for bg tech in projects section */
+.tech-projects-primary {
+  background-color: var(--color-bg-tech-project-primary);
+}
+.tech-projects-secondary {
+  background-color: var(--color-bg-tech-project-secondary);
+}
+.tech-projects-tertiary {
+  background-color: var(--color-bg-tech-project-tertiary);
+}
+.tech-projects-quaternary {
+  background-color: var(--color-bg-tech-project-quaternary);
+}
+.tech-projects-quinary {
+  background-color: var(--color-bg-tech-project-quinary);
+}
+.tech-projects-senary {
+  background-color: var(--color-bg-tech-project-senary);
+}
+
+/* Base Body Styles */
+
+body {
+  margin: 0;
+  background: var(--color-bg-body);
+  min-width: 320px;
+  min-height: 100vh;
+
+  /* Smooth transition for body background & text */
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+h1:focus-visible,
+h2:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Input focus normalization    */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Chrome / Safari autofill FIX */
+
+/* Light mode */
+html:not(.dark) input:-webkit-autofill,
+html:not(.dark) textarea:-webkit-autofill,
+html:not(.dark) input:-webkit-autofill:focus,
+html:not(.dark) textarea:-webkit-autofill:focus {
+  border: 2px solid black;
+  -webkit-text-fill-color: black !important;
+
+  -webkit-box-shadow: 0 0 0 1000px var(--color-bg-form) inset,
+    var(--retro-shadow-tech) !important;
+
+  outline: none !important;
+}
+
+/* Dark mode */
+html.dark input:-webkit-autofill,
+html.dark textarea:-webkit-autofill,
+html.dark input:-webkit-autofill:focus,
+html.dark textarea:-webkit-autofill:focus {
+  border: 2px solid var(--color-border);
+  -webkit-text-fill-color: var(--color-text) !important;
+
+  -webkit-box-shadow: 0 0 0 1000px var(--color-bg-form) inset,
+    var(--retro-shadow-tech) !important;
+
+  outline: none !important;
+}
+
+/* color-variable changes animate smoothly */
+:root,
+.dark {
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
+}
+
+/* outline style Name for --color-text-secondary*/
+.big-outline {
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}

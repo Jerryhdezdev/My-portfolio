@@ -113,7 +113,29 @@
       "tooltipLiveDemo": "Check out the live demo"
     },
     "contact": {
-      "title": "Contact Me"
+      "title": "Contact Me",
+      "subtitle": "Let’s work together",
+      "formName": "Your name",
+      "formEmail": "Your e-mail",
+      "formMessage": "Your Message...",
+      "formButtonSend": "Send",
+      "formButtonSending": "Sending...",
+      "imageAlt": "Decorative cartoon for contact section",
+      "formInvalidEmail": "Invalid email format",
+      "formInvalidFormat": "Invalid name format",
+      "formRequiredField": "Required field",
+      "formMinLength": "Minimum length not reached",
+      "formMaxLength": "Maximum length exceeded"
     }
+  },
+    "email": {
+    "autoReply": {
+      "subject": "Thanks for contacting me!",
+      "message": "Hi {{name}},\n\nThanks for reaching out through my portfolio.\nI’ve received your message and will get back to you soon.\n\nBest regards,\nJerry"
+    }
+  },
+  "alerts": {
+    "submitStatusSuccess": "Your message has been sent!",
+    "submitStatusFailed": "Oops! Something went wrong, please try again."
   }
 }

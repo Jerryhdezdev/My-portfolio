@@ -1,0 +1,97 @@
+/* Wiggle + scale animation for email icon */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: scale(1.22) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.22) rotate(-8deg);
+  }
+  50% {
+    transform: scale(1.22) rotate(8deg);
+  }
+  75% {
+    transform: scale(1.22) rotate(-8deg);
+  }
+}
+
+.motion-wiggle {
+  transition: transform 0.3s ease;
+}
+
+.motion-wiggle:hover,
+.motion-wiggle:focus-visible {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+/* Press / lift interaction (mouse + keyboard) for button and home icons*/
+.motion-press {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.motion-press:hover,
+.motion-press:focus-visible {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-press {
+    transition: none;
+  }
+}
+
+/* Reduced motion for logos and icons */
+.scale-interactive {
+  transition: transform 300ms ease;
+}
+
+.scale-interactive:hover,
+.scale-interactive:focus-visible {
+  transform: scale(1.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scale-interactive {
+    transition: none;
+  }
+}
+
+/* Animation profile image*/
+@keyframes rubberHose {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.08) rotate(-2deg);
+  }
+  60% {
+    transform: scale(0.95) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.rubber-hose {
+  animation: rubberHose 1s ease-out;
+}
+
+/* Animation profile name*/
+@keyframes starburstPop {
+  0% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.7) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.starburst-pop {
+  animation: starburstPop 1s ease-out;
+}

@@ -1,0 +1,44 @@
+/* Film animation */
+@keyframes film {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-912px);
+  } /* 6 slots x 152px each */
+}
+
+.animate-film {
+  animation: film 18s linear infinite;
+  will-change: transform;
+}
+.top-rail {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(240, 236, 236) 0 12px,
+    rgb(24, 24, 24) 12px 24px
+  );
+}
+
+.bottom-rail {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(245, 242, 242) 0 12px,
+    rgb(24, 24, 24) 12px 24px
+  );
+}
+
+.film-strip {
+  display: flex;
+  will-change: transform;
+  transform: translateX(var(--film-offset));
+  transition: transform 0.1s linear;
+}
+
+.animation-paused {
+  animation-play-state: paused;
+}
+
+.animation-running {
+  animation-play-state: running;
+}

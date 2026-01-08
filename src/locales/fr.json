@@ -111,7 +111,29 @@
       "tooltipLiveDemo": "Voir la démo en ligne"
     },
     "contact": {
-      "title": "Me contacter"
+      "title": "Me contacter",
+      "subtitle": "Travaillons ensemble",
+      "formName": "Votre nome",
+      "formEmail": "Votre e-mail",
+      "formMessage": "Votre message...",
+      "formButtonSend": "Envoyer",
+      "formButtonSending": "Envoi en cours...",
+      "imageAlt": "Illustration cartoon décorative pour la section contact",
+      "formInvalidEmail": "Format d’adresse e-mail invalide",
+      "formInvalidFormat": "Format de nom invalide",
+      "formRequiredField": "Champ obligatoire",
+      "formMinLength": "Longueur minimale non atteinte",
+      "formMaxLength": "Longueur maximale dépassée"
     }
+  },
+    "email": {
+    "autoReply": {
+      "subject": "Merci de m’avoir contacté !",
+      "message": "Bonjour {{name}},\n\nMerci de m’avoir contacté via mon portfolio.\nJ’ai bien reçu votre message et je vous répondrai bientôt.\n\nCordialement,\nJerry"
+    }
+  },
+  "alerts": {
+    "submitStatusSuccess": "Votre message a été envoyé !",
+    "submitStatusFailed": "Oups ! Quelque chose s’est mal passé, veuillez réessayer."
   }
 }

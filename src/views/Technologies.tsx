@@ -74,17 +74,16 @@ const VintageCard = ({
       bounceDamping: 20,
     }}
     /* Floating idle animation */
-  animate={{
-    y: [0, -6, 0],
-    rotate: [-0.6, 0.6, -0.6],
-  }}
-
-  transition={{
-    duration: 4 + index * 0.3,
-    repeat: Infinity,
-    repeatType: "mirror",
-    ease: "easeInOut",
-  }}
+    animate={{
+      y: [0, -6, 0],
+      rotate: [-0.6, 0.6, -0.6],
+    }}
+    transition={{
+      duration: 4 + index * 0.3,
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeInOut",
+    }}
     className="
       w-32 h-40 md:w-36 md:h-44
       p-2
@@ -130,7 +129,7 @@ export function Technologies() {
     <section
       id="technologies"
       aria-labelledby="technologies-heading"
-      className="scroll-mt-20 px-6 py-16 min-h-screen flex flex-col items-center"
+      className="scroll-mt-20 px-6 py-[5vh] min-h-[60vh] md:min-h-[70vh] flex flex-col items-center"
     >
       {/* Title */}
       <h1
@@ -253,7 +252,7 @@ export function Technologies() {
       </div>
 
       {/* Divider*/}
-      <div className="w-full">
+      <div className="w-full xl:mt-15 ">
         <SectionDivider
           className="justify-start gap-10 md:gap-20"
           primaryClass="w-[500px] md:w-[600px] lg:w-[800px]"

@@ -3,8 +3,6 @@ import { useTheme } from "../components/ThemeContext";
 import { SectionDivider } from "../components/SectionDivider";
 import { experienceData } from "../data/experienceData";
 
-
-
 export function Experience() {
   const { theme } = useTheme();
   const { t } = useTranslation();
@@ -13,7 +11,7 @@ export function Experience() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="scroll-mt-20 px-6 py-16 min-h-screen flex flex-col justify-center items-center"
+      className="scroll-mt-20 px-6 py-[5vh] min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center"
     >
       {/* Section title */}
       <h1
@@ -96,7 +94,7 @@ export function Experience() {
       </div>
 
       {/* Divider */}
-      <div className="w-full mt-16">
+      <div className="w-full xl:mt-15 ">
         <SectionDivider
           className="justify-start md:justify-start gap-10 md:gap-20"
           primaryClass="w-[500px] md:w-[600px] lg:w-[800px]"

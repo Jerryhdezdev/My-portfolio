@@ -40,10 +40,9 @@ export function Home() {
           {/* Desktop: Button + Icons in ONE row */}
           <div className="hidden md:flex items-center justify-start gap-6 order-3 mt-6">
             {/* Button */}
-            <RetroButton
-              text={t("sections.home.cta")}
-              className="whitespace-nowrap"
-            />
+            <RetroButton className="whitespace-nowrap">
+              {t("sections.home.cta")}
+            </RetroButton>
 
             {/* GitHub Icon */}
             <Tooltip labelKey="sections.home.tooltipGitHub">
@@ -129,10 +128,9 @@ export function Home() {
         <div className="block md:hidden order-3 mt-4">
           <div className="flex items-center justify-center gap-4">
             {/* Button */}
-            <RetroButton
-              text={t("sections.home.cta")}
-              className="whitespace-nowrap"
-            />
+            <RetroButton className="whitespace-nowrap">
+              {t("sections.home.cta")}
+            </RetroButton>
 
             {/* GitHub Icon */}
             <Tooltip labelKey="sections.home.tooltipGitHub">

@@ -95,24 +95,46 @@
       "backendAlt": "Icono de la sección de backend",
       "toolsAlt": "Icono de la sección de herramientas"
     },
-"projects": {
-  "title": "Proyectos",
-  "imageAlt": "Ilustración cartoon decorativa para la sección de proyectos",
-  "items": [
-    {
-      "title": "Portfolio Personal",
-      "description": "Este proyecto funciona tanto como mi portfolio web como un ejercicio práctico para construir una aplicación de una sola página (SPA) estructurada y accesible, combinando una organización de código limpia con un estilo visual retro inspirado en caricaturas."
+    "projects": {
+      "title": "Proyectos",
+      "imageAlt": "Ilustración cartoon decorativa para la sección de proyectos",
+      "items": [
+        {
+          "title": "Portfolio Personal",
+          "description": "Este proyecto funciona tanto como mi portfolio web como un ejercicio práctico para construir una aplicación de una sola página (SPA) estructurada y accesible, combinando una organización de código limpia con un estilo visual retro inspirado en caricaturas."
+        },
+        {
+          "title": "Refugio Animal MVP (Web)",
+          "description": "Una aplicación web MVP creada para ayudar a un refugio animal a aumentar las oportunidades de adopción mediante una interfaz clara, accesible y fácil de usar, con una estructura preparada para una futura escalabilidad."
+        }
+      ],
+      "tooltipGitHub": "Ver repositorio",
+      "tooltipLiveDemo": "echa un viztado al demo"
     },
-    {
-      "title": "Refugio Animal MVP (Web)",
-      "description": "Una aplicación web MVP creada para ayudar a un refugio animal a aumentar las oportunidades de adopción mediante una interfaz clara, accesible y fácil de usar, con una estructura preparada para una futura escalabilidad."
-    }
-  ],
-  "tooltipGitHub": "Ver repositorio",
-  "tooltipLiveDemo": "echa un viztado al demo"
-},
     "contact": {
-      "title": "Contáctame"
+      "title": "Contáctame",
+      "subtitle": "Trabajemos juntos",
+      "formName": "Tu nombre",
+      "formEmail": "Tu e-mail",
+      "formMessage": "Tu mensaje...",
+      "formButtonSend": "Enviar",
+      "formButtonSending": "Enviando...",
+      "imageAlt": "Ilustración cartoon decorativa para la sección de contacto",
+      "formInvalidEmail": "Formato de correo electrónico inválido",
+      "formInvalidFormat": "Formato de nombre inválido",
+      "formRequiredField": "Campo obligatorio",
+      "formMinLength": "No se alcanzó la longitud mínima",
+      "formMaxLength": "Se excedió la longitud máxima"
     }
+  },
+  "email": {
+    "autoReply": {
+      "subject": "¡Gracias por contactarme!",
+      "message": "Hola {{name}},\n\nGracias por contactarme a través de mi portfolio.\nHe recibido tu mensaje y te responderé pronto.\n\nSaludos,\nJerry"
+    }
+  },
+  "alerts": {
+    "submitStatusSuccess": "¡Tu mensaje ha sido enviado!",
+    "submitStatusFailed": "¡Ups! Algo salió mal, inténtalo de nuevo."
   }
 }

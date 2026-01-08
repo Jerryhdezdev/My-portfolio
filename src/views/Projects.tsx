@@ -20,12 +20,13 @@ export function Projects() {
   }
 
   const currentImage =
-    theme === "dark"
-      ? currentProject.images.dark
-      : currentProject.images.light;
+    theme === "dark" ? currentProject.images.dark : currentProject.images.light;
 
   return (
-    <section id="projects" className="scroll-mt-20 px-6 py-16 min-h-screen">
+    <section
+      id="projects"
+      className="scroll-mt-20 px-6 py-[5vh] min-h-[60vh] md:min-h-[70vh]"
+    >
       <h1 className="text-6xl lg:text-8xl font-extrabold text-(--color-text-primary) mb-10">
         {t("sections.projects.title", "Projects")}
       </h1>
@@ -48,7 +49,7 @@ export function Projects() {
         />
       </div>
 
-      <div className="w-full mt-16">
+      <div className="w-full xl:mt-15 ">
         <SectionDivider
           className="justify-start md:justify-start gap-10 md:gap-20"
           primaryClass="w-[500px] md:w-[600px] lg:w-[800px]"
