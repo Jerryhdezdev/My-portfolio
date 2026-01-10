@@ -76,7 +76,7 @@ export const timelineItemVariant: Variants = {
     x: 0,
     rotate: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 90,
       damping: 14,
     },
@@ -106,7 +106,7 @@ export const techTitleVariant: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 90,
       damping: 16,
     },
@@ -123,7 +123,7 @@ export const techGroupVariant: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 80,
       damping: 14,
     },
@@ -153,7 +153,7 @@ export const projectsTitleVariant: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 90,
       damping: 16,
     },
@@ -170,7 +170,7 @@ export const projectLeftVariant: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 80,
       damping: 18,
     },
@@ -187,7 +187,7 @@ export const projectRightVariant: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 80,
       damping: 18,
     },
@@ -233,7 +233,7 @@ export const contactTitleVariant: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 90,
       damping: 16,
     },
@@ -250,7 +250,7 @@ export const contactLeftVariant: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 80,
       damping: 18,
     },
@@ -269,7 +269,7 @@ export const contactImageVariant: Variants = {
     x: 0,
     rotate: 0,
     transition: {
-      type: "spring" as const,
+      type: "spring",
       stiffness: 70,
       damping: 20,
     },
