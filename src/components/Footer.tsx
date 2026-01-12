@@ -120,7 +120,7 @@ export function Footer() {
             {/* GitHub Icon */}
             <Tooltip labelKey="footer.tooltipGitHub">
               <a
-                href="https://github.com/Ghdez13"
+                href="https://github.com/Jerryhdezdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -132,7 +132,7 @@ export function Footer() {
             {/* LinkedIn Icon */}
             <Tooltip labelKey="footer.tooltipLinkedIn">
               <a
-                href="https://www.linkedin.com/in/jerry-hernandez-dev"
+                href="https://www.linkedin.com/in/jerryhdez"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -310,7 +310,7 @@ export function Footer() {
         <p className="text-center text-sm">
           © {new Date().getFullYear()} {t("footer.developer")}{" "}
           <a
-            href="https://www.linkedin.com/in/jerry-hernandez-dev"
+            href="https://www.linkedin.com/in/jerryhdez"
             target="_blank"
             rel="noopener noreferrer"
             className="
