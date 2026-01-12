@@ -37,20 +37,26 @@ export function SEO() {
       {/* Open Graph (Facebook / WhatsApp / LinkedIn) */}
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Jerryhdez Portfolio" />
-      <meta property="og:title" content={t("meta.title")} />
-      <meta property="og:description" content={t("meta.description")} />
-      <meta property="og:url" content={siteUrl} />
+      <meta property="og:title" content="Jerryhdez | Java Backend Developer" />
+      <meta
+        property="og:description"
+        content="Java Backend Developer focused on clean architecture and scalable systems."
+      />
+      <meta property="og:url" content="https://jerryhdez.com" />
 
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:secure_url" content={ogImage} />
+      <meta
+        property="og:image"
+        content="https://jerryhdez.com/logo/og-banner.webp"
+      />
+      <meta
+        property="og:image:secure_url"
+        content="https://jerryhdez.com/logo/og-banner.webp"
+      />
       <meta property="og:image:type" content="image/webp" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
-      <meta
-        property="og:locale"
-        content={localeMap[lang] ?? "en_US"}
-      />
+      <meta property="og:locale" content={localeMap[lang] ?? "en_US"} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
