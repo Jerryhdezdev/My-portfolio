@@ -284,11 +284,10 @@ export function Footer() {
                           );
                         }}
                         className={`px-3 py-2 cursor-pointer select-none
-    ${
-      focusedIndex === index
-        ? "bg-[#fbbd35]/20 outline-none"
-        : "hover:bg-[#fbbd35]/10"
-    }`}
+    ${focusedIndex === index
+                            ? "bg-[#fbbd35]/20 outline-none"
+                            : "hover:bg-[#fbbd35]/10"
+                          }`}
                       >
                         {lang.name}
                         {index < LANGUAGES.length - 1 && (
