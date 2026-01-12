@@ -15,6 +15,14 @@ export function Home() {
   const isDark = theme === "dark";
   const { t } = useTranslation();
 
+    // Handler for CV download
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/Gerardo_Hernandez_Jerryhdez_CV.pdf"; 
+    link.download = "Gerardo_Hernandez_Jerryhdez_CV.pdf";
+    link.click();
+  };
+
   return (
     <motion.section
       id="home"
@@ -45,7 +53,7 @@ export function Home() {
           {/* Desktop: Button + Icons in ONE row */}
           <div className="hidden md:flex items-center justify-start gap-6 order-3 mt-6">
             {/* Button */}
-            <RetroButton className="whitespace-nowrap">
+            <RetroButton onClick={handleDownloadCV} className="whitespace-nowrap">
               {t("sections.home.cta")}
             </RetroButton>
 
@@ -132,7 +140,7 @@ export function Home() {
         <div className="block md:hidden order-3 mt-4">
           <div className="flex items-center justify-center gap-4">
             {/* Button */}
-            <RetroButton className="whitespace-nowrap">
+            <RetroButton onClick={handleDownloadCV} className="whitespace-nowrap">
               {t("sections.home.cta")}
             </RetroButton>
 
