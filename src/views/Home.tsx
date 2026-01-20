@@ -129,8 +129,8 @@ export function Home() {
             className="
     object-contain
     w-full
-    max-w-[500px]                /* mobile */
-    md:max-w-[700px]            /* tablet */
+    max-w-125                /* mobile */
+    md:max-w-175            /* tablet */
     mx-auto
     "
           />
