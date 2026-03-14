@@ -105,6 +105,10 @@
         {
           "title": "Refugio Animal MVP (Web)",
           "description": "Una aplicación web MVP creada para ayudar a un refugio animal a aumentar las oportunidades de adopción mediante una interfaz clara, accesible y fácil de usar, con una estructura preparada para una futura escalabilidad."
+        },
+        {
+          "title": "Backend Refugio Animal | En progreso 🚧",
+          "description": "Sistema Backend para la gestión de un refugio de animales, construido con Java y Spring Boot. Incluye arquitectura en capas, API REST, manejo de excepciones personalizado y pruebas unitarias con JUnit y Mockito."
         }
       ],
       "tooltipGitHub": "Ver repositorio",

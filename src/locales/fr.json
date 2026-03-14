@@ -104,6 +104,10 @@
         {
           "title": "Refuge Animalier MVP (Web)",
           "description": "Une application web MVP conçue pour aider un refuge animalier à augmenter les opportunités d’adoption grâce à une interface claire, accessible et conviviale, avec une structure préparée pour une évolutivité future."
+        },
+        {
+          "title": "Backend Refuge Animalier | En cours 🚧",
+          "description": "Système Backend pour la gestion d'un refuge animalier, construit avec Java et Spring Boot. Comprend une architecture en couches, une API REST, une gestion personnalisée des exceptions et des tests unitaires avec JUnit et Mockito."
         }
       ],
       "tooltipGitHub": "Voir le dépôt",

@@ -2,6 +2,8 @@ import animalShelterLight from "../assets/images/animalShelterLight.webp";
 import animalShelterDark from "../assets/images/animalShelterDark.webp";
 import portfolioLight from "../assets/images/PortfolioLight.webp";
 import portfolioDark from "../assets/images/PortfolioDark.webp";
+import animalShelterBackendLight from "../assets/images/animalShelterBackendLight.webp";
+import animalShelterBackendDark from "../assets/images/animalShelterBackendDark.webp";
 import type { Tech } from "../data/techColorMap";
 
 export type ProjectImages = {
@@ -42,5 +44,16 @@ export const projects: Project[] = [
     tech: ["React", "Tailwind", "JavaScript"],
     repoUrl: "https://github.com/Jerryhdezdev/animal-shelter-web",
     demoUrl: "https://jauspet.vercel.app/",
+  },
+    {
+    id: 3,
+    title: "sections.projects.items.2.title",
+    description: "sections.projects.items.2.description",
+    images: {
+      light: animalShelterBackendLight,
+      dark: animalShelterBackendDark,
+    },
+    tech: ["Java","SpringBoot","JUnit", "Mockito"],
+    repoUrl: "https://github.com/Jerryhdezdev/animal-shelter-backend",
   },
 ];

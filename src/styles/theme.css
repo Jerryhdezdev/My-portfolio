@@ -49,8 +49,10 @@ html:not(.theme-ready) * {
   --color-bg-tech-project-secondary: #9caa53ab;
   --color-bg-tech-project-tertiary: #e26866de;
   --color-bg-tech-project-quaternary: #e0b855dc;
-  --color-bg-tech-project-quinary: #b6a2a1;
-  --color-bg-tech-project-senary: #a7a84fe3;
+  --color-bg-tech-project-quinary: #a1dceb;
+  --color-bg-tech-project-senary: #4fa86de3;
+  --color-bg-tech-project-septenary: #de96e0e3;
+  --color-bg-tech-project-octonary: #eca53ae3;
 
   /*Github and Live Demo bg color projects section*/
   --color-bg-button-github: #c59ba3fb;
@@ -116,8 +118,10 @@ html:not(.theme-ready) * {
   --color-bg-tech-project-secondary: #758136ab;
   --color-bg-tech-project-tertiary: #a14241de;
   --color-bg-tech-project-quaternary: #b1944adc;
-  --color-bg-tech-project-quinary: #926f6d;
-  --color-bg-tech-project-senary: #797a3ee3;
+  --color-bg-tech-project-quinary: #5a93a1;
+  --color-bg-tech-project-senary: #2e5a3de3;
+  --color-bg-tech-project-septenary: #b179b3e3;
+  --color-bg-tech-project-octonary: #a8762ae3;
 
   /*Github and Live Demo bg color projects section*/
   --color-bg-button-github: #a37a82fb;
@@ -175,6 +179,12 @@ html:not(.theme-ready) * {
 }
 .tech-projects-senary {
   background-color: var(--color-bg-tech-project-senary);
+}
+.tech-projects-septenary {
+  background-color: var(--color-bg-tech-project-septenary);
+}
+.tech-projects-octonary {
+  background-color: var(--color-bg-tech-project-octonary);
 }
 
 /* Base Body Styles */

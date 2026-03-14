@@ -34,7 +34,7 @@ export const ProjectReview = ({ project }: ProjectReviewProps) => {
                 text-lg select-none
               `}
             >
-              {tech}
+              #{tech}
             </li>
           );
         })}

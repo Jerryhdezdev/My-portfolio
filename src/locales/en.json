@@ -106,6 +106,10 @@
         {
           "title": "Animal Shelter MVP (Web)",
           "description": "A web-based MVP created to help an animal shelter increase adoption opportunities through a clear, accessible, and user-friendly interface, with a structure prepared for future scalability."
+        },
+        {
+          "title": "Animal Shelter Backend | Work in Progress 🚧",
+          "description": "Backend system for managing an animal shelter, built with Java and Spring Boot. Includes layered architecture, REST API, custom exception handling and unit testing with JUnit and Mockito."
         }
       ],
       "tooltipGitHub": "View repository",

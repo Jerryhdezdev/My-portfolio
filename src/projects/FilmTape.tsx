@@ -27,7 +27,7 @@ export function FilmTape({ projects, currentIndex, onSelect }: FilmTapeProps) {
 
   return (
     // Main wrapper: capped width +  centered
-    <div className="mx-auto max-w-[900px] relative rotate-[-0.4deg] -mt-10 md:-mt-30 lg:-mt-10 xl:-mt-20">
+    <div className="mx-auto max-w-225 relative rotate-[-0.4deg] -mt-10 md:-mt-30 lg:-mt-10 xl:-mt-20">
       <img
         src={theme === "dark" ? FilmDark : FilmLight}
         alt={t("sections.projects.imageAlt", "Filmtape Projects icon")}
@@ -44,7 +44,7 @@ export function FilmTape({ projects, currentIndex, onSelect }: FilmTapeProps) {
         onBlur={() => setPaused(false)}
       >
         {/* Top rail*/}
-        <div className="absolute top-0 left-0 w-full h-[22px] border-b-2 border-(--color-filtape) top-rail" />
+        <div className="absolute top-0 left-0 w-full h-5.5 border-b-2 border-(--color-filtape) top-rail" />
 
         {/* Moving film strip */}
         <div
@@ -102,7 +102,7 @@ export function FilmTape({ projects, currentIndex, onSelect }: FilmTapeProps) {
         </div>
 
         {/* Bottom rail */}
-        <div className="absolute bottom-0 left-0 w-full h-[22px] border-t-2 border-(--color-filtape) bottom-rail" />
+        <div className="absolute bottom-0 left-0 w-full h-5.5 border-t-2 border-(--color-filtape) bottom-rail" />
       </div>
     </div>
   );
